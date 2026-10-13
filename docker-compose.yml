@@ -1,0 +1,50 @@
+services:
+  # 1. DATABASE POSTGRESQL (Auto-init tabel users, rooms, bookings)
+  postgres:
+    image: postgres:15-alpine
+    restart: always
+    environment:
+      POSTGRES_DB: ${DB_NAME:-smart_gs_db}
+      POSTGRES_USER: ${DB_USER:-smart_gs_admin}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-TelkomRegional3_GS2026!}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./scripts/database_schema.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - smart_gs_network
+
+  # 2. WEB FRONTEND SMART GS PORTAL (React + Nginx)
+  # Authentication is provided by the shared Keycloak deployment at auth.treg3.com.
+  frontend:
+    image: ${IMAGE_NAME:-smart-gs-dashboard}:${IMAGE_TAG:-latest}
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        VITE_AUTH_MODE: ${VITE_AUTH_MODE}
+        VITE_KEYCLOAK_ISSUER: ${VITE_KEYCLOAK_ISSUER}
+        VITE_KEYCLOAK_CLIENT_ID: ${VITE_KEYCLOAK_CLIENT_ID}
+        VITE_KEYCLOAK_REDIRECT_URI: ${VITE_KEYCLOAK_REDIRECT_URI}
+        VITE_SUPABASE_URL: ${VITE_SUPABASE_URL}
+        VITE_SUPABASE_ANON_KEY: ${VITE_SUPABASE_ANON_KEY}
+        VITE_SHEETS_WEBAPP_URL: ${VITE_SHEETS_WEBAPP_URL}
+    restart: unless-stopped
+    ports:
+      - "${PORT:-14071}:80"
+    networks:
+      - smart_gs_network
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O /dev/null http://127.0.0.1/health || exit 1"]
+      interval: 30s
+      timeout: 3s
+      start_period: 10s
+      retries: 3
+
+networks:
+  smart_gs_network:
+    driver: bridge
+
+volumes:
+  postgres_data:
