@@ -22,6 +22,7 @@ import TLTSpaceHubApp from './modules/tlt-space-hub/App.jsx';
 import { AuthProvider, useAuth } from './auth/AuthContext.jsx';
 import LoginPage from './auth/LoginPage.jsx';
 import UserProfileMenu from './components/UserProfileMenu.jsx';
+import BrandFooter from './components/BrandFooter.jsx';
 
 // Overview Portal Component
 function OverviewDashboard({ onNavigate }) {
@@ -256,18 +257,7 @@ function MainApp() {
       )}
 
       {/* Footer */}
-      {activeModule === 'overview' && (
-        <footer style={{
-          padding: '1.5rem',
-          borderTop: '1px solid var(--card-border)',
-          background: 'var(--footer-bg)',
-          textAlign: 'center',
-          color: 'var(--text-muted)',
-          fontSize: '0.8125rem'
-        }}>
-          © 2026 PT Telkom Indonesia (Persero) Tbk - Regional 3. SMART GS.
-        </footer>
-      )}
+      <BrandFooter />
     </div>
   );
 }

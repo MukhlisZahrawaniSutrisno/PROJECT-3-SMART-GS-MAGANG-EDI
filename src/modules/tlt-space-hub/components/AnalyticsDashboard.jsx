@@ -70,11 +70,11 @@ export default function AnalyticsDashboard({
         label: 'Jumlah Peminjaman',
         data: [floorCounts['9'], floorCounts['11'], floorCounts['12']],
         backgroundColor: [
-          '#CC0000',
+          '#E30613',
           '#666666',
           '#A3A3A3',
         ],
-        borderColor: ['#CC0000', '#666666', '#A3A3A3'],
+        borderColor: ['#E30613', '#666666', '#A3A3A3'],
         borderWidth: 1,
         borderRadius: 8,
       },
@@ -103,7 +103,7 @@ export default function AnalyticsDashboard({
           statusCounts['Dibatalkan']
         ],
         backgroundColor: [
-          '#CC0000',
+          '#E30613',
           '#A3A3A3',
           '#4D4D4D',
           '#D4D4D4',

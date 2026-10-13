@@ -100,6 +100,7 @@ export default function LoginPage({ theme, toggleTheme }) {
           color: 'var(--text-muted)'
         }}>
           © 2026 PT Telkom Indonesia (Persero) Tbk — Regional 3
+          <div className="login-danantara">DANANTARA | Untuk Indonesia</div>
         </div>
       </div>
     </div>
