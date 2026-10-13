@@ -4,16 +4,16 @@
   color-scheme: light;
   --primary-red: #e30613;
   --primary-red-hover: #bd0510;
-  --bg-color: #111318;
-  --shell-bg: #191c22;
-  --shell-border: #30343d;
-  --shell-text: #f5f6f8;
-  --shell-muted: #b6bcc7;
+  --bg-color: #f8f9fa;
+  --shell-bg: #ffffff;
+  --shell-border: #e4e7ec;
+  --shell-text: #1a1a1a;
+  --shell-muted: #626b78;
   --bg-main: var(--bg-color);
   --bg-image: none;
   --card-bg: #ffffff;
   --card-border: #e4e7ec;
-  --card-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+  --card-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
   --text-title: #1a1a1a;
   --text-main: #333333;
   --text-muted: #626b78;
@@ -44,12 +44,12 @@
   --font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-/* The existing theme control switches between light and dark content surfaces. */
+/* Keep the page canvas light while preserving the optional dark content surfaces. */
 [data-theme="dark"] {
   color-scheme: dark;
   --primary-red: #e30613;
   --primary-red-hover: #bd0510;
-  --bg-color: #111318;
+  --bg-color: #eef1f5;
   --card-bg: #1c2027;
   --card-border: #363c47;
   --card-shadow: 0 2px 6px rgba(0, 0, 0, 0.16);
@@ -103,17 +103,17 @@ body :is(.form-input, .form-select, .form-textarea):focus {
 body .app-header {
   background: var(--shell-bg);
   border-bottom: 1px solid var(--shell-border);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   --text-title: var(--shell-text);
-  --text-main: #e2e5eb;
+  --text-main: #333333;
   --text-muted: var(--shell-muted);
-  --input-bg: #252a33;
-  --card-bg: #252a33;
-  --card-border: #454d59;
-  --btn-secondary-bg: #252a33;
-  --btn-secondary-text: #e2e5eb;
-  --btn-secondary-border: #454d59;
-  --btn-secondary-hover: #363d49;
+  --input-bg: #f8f9fa;
+  --card-bg: #ffffff;
+  --card-border: #e4e7ec;
+  --btn-secondary-bg: #f3f4f6;
+  --btn-secondary-text: #333333;
+  --btn-secondary-border: #d1d5db;
+  --btn-secondary-hover: #e5e7eb;
 }
 
 body .navbar-container {
@@ -315,7 +315,7 @@ body .portal-footer {
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  color: #f5f6f8;
+  color: var(--shell-text);
   white-space: nowrap;
 }
 
