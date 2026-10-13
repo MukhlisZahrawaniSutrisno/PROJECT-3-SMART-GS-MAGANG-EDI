@@ -44,12 +44,13 @@
   --font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-/* Keep the page canvas light while preserving the optional dark content surfaces. */
+/* Soft black canvas with a subtle translucent white layer in dark mode. */
 [data-theme="dark"] {
   color-scheme: dark;
   --primary-red: #e30613;
   --primary-red-hover: #bd0510;
-  --bg-color: #eef1f5;
+  --bg-color: #111318;
+  --bg-image: linear-gradient(rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.04));
   --card-bg: #1c2027;
   --card-border: #363c47;
   --card-shadow: 0 2px 6px rgba(0, 0, 0, 0.16);

@@ -1296,6 +1296,11 @@ input[type="password"]::-ms-clear {
   color: var(--shell-text);
 }
 
+[data-theme="dark"] .hero-container > div:first-child {
+  --shell-text: #f5f6f8;
+  --shell-muted: #b6bcc7;
+}
+
 .hero-container > div:first-child > div:first-child {
   background: transparent !important;
   padding: 0 !important;
