@@ -31,12 +31,12 @@ export default function UserProfileMenu() {
           alignItems: 'center',
           gap: '0.65rem',
           padding: '0.3rem 0.65rem 0.3rem 0.3rem',
-          borderRadius: '99px',
+          borderRadius: '8px',
           background: 'var(--card-bg)',
           border: '1px solid var(--card-border)',
           cursor: 'pointer',
           transition: 'all 0.2s ease',
-          boxShadow: '0 2px 6px rgba(0,0,0,0.04)'
+          boxShadow: 'var(--card-shadow)'
         }}
       >
         {/* Avatar Image */}
@@ -78,19 +78,19 @@ export default function UserProfileMenu() {
             top: 'calc(100% + 8px)',
             right: 0,
             width: '230px',
-            borderRadius: '16px',
+            borderRadius: '8px',
             background: 'var(--card-bg)',
             border: '1px solid var(--card-border)',
-            boxShadow: '0 12px 32px rgba(0,0,0,0.12)',
+            boxShadow: 'var(--card-shadow)',
             padding: '0.85rem',
             zIndex: 1000,
-            backdropFilter: 'blur(16px)',
-            animation: 'fadeInSlide 0.18s ease'
+            backdropFilter: 'none',
+            animation: 'none'
           }}
         >
           {/* Header Profile: Name & Email only */}
           <div style={{ paddingBottom: '0.75rem', borderBottom: '1px solid var(--card-border)' }}>
-            <div style={{ fontSize: '0.875rem', fontWeight: 800, color: 'var(--text-title)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+            <div style={{ fontSize: '0.875rem', fontWeight: 700, color: 'var(--text-title)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
               {user.name}
             </div>
             <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
@@ -113,10 +113,10 @@ export default function UserProfileMenu() {
                 justifyContent: 'center',
                 gap: '0.5rem',
                 padding: '0.55rem 0.85rem',
-                borderRadius: '10px',
-                background: 'rgba(224, 0, 0, 0.08)',
+                borderRadius: '8px',
+                background: 'rgba(204, 0, 0, 0.06)',
                 color: 'var(--primary-red)',
-                border: '1px solid rgba(224, 0, 0, 0.15)',
+                border: '1px solid rgba(204, 0, 0, 0.06)',
                 fontWeight: 700,
                 fontSize: '0.8125rem',
                 cursor: 'pointer',

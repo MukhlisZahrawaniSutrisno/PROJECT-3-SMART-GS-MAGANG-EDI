@@ -24,10 +24,10 @@ export default function AdminMonitoring({ letters, onOpenApprovalModal, onEditRe
     <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
 
       {/* Banner Mode Admin Sekdiv */}
-      <div className="glass-card" style={{ padding: '1.25rem', background: 'linear-gradient(135deg, rgba(224, 0, 0, 0.08) 0%, rgba(37, 99, 235, 0.05) 100%)', border: '1px solid rgba(224, 0, 0, 0.2)' }}>
+      <div className="glass-card" style={{ padding: '1.25rem', background: 'var(--card-bg)', border: '1px solid var(--card-border)' }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.875rem' }}>
-            <div style={{ width: '42px', height: '42px', borderRadius: '12px', background: 'var(--primary-red)', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+            <div style={{ width: '42px', height: '42px', borderRadius: '8px', background: 'var(--primary-red)', color: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
               <ShieldCheck size={24} />
             </div>
             <div>
@@ -41,7 +41,7 @@ export default function AdminMonitoring({ letters, onOpenApprovalModal, onEditRe
           </div>
 
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-            <div style={{ background: 'var(--card-bg)', padding: '0.5rem 0.875rem', borderRadius: '10px', border: '1px solid var(--card-border)', fontSize: '0.8125rem', fontWeight: 600 }}>
+            <div style={{ background: 'var(--card-bg)', padding: '0.5rem 0.875rem', borderRadius: '8px', border: '1px solid var(--card-border)', fontSize: '0.8125rem', fontWeight: 600 }}>
               <Calendar size={14} style={{ marginRight: '0.35rem', verticalAlign: 'middle', color: 'var(--primary-red)' }} />
               Filter Tanggal TTD:
               <input
@@ -56,7 +56,7 @@ export default function AdminMonitoring({ letters, onOpenApprovalModal, onEditRe
       </div>
 
       {/* Info Aturan Spare 5 Nomor */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', background: 'rgba(59, 130, 246, 0.1)', border: '1px solid rgba(59, 130, 246, 0.25)', padding: '0.75rem 1rem', borderRadius: '12px', fontSize: '0.8125rem', color: '#1e40af' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', background: 'var(--input-bg)', border: '1px solid var(--card-border)', padding: '0.75rem 1rem', borderRadius: '8px', fontSize: '0.8125rem', color: 'var(--text-main)' }}>
         <AlertCircle size={18} style={{ flexShrink: 0 }} />
         <span>
           <strong>Sistem Spare Slot & Libur Nasional:</strong> Setiap tanggal kerja (Senin–Jumat) dialokasikan spare 5 nomor urut. Hari libur akhir pekan (Sabtu & Minggu) serta <strong>Tanggal Merah / Libur Nasional Weekday</strong> secara otomatis di-skip oleh sistem.
@@ -85,16 +85,16 @@ export default function AdminMonitoring({ letters, onOpenApprovalModal, onEditRe
 
             <button
               onClick={onOpenExportModal}
-              className="btn"
+              className="btn btn-secondary"
               style={{
-                background: '#16a34a',
-                color: '#ffffff',
+                background: 'var(--input-bg)',
+                color: 'var(--text-main)',
                 border: 'none',
                 fontWeight: 700,
                 fontSize: '0.8125rem',
                 padding: '0.55rem 1.15rem',
                 borderRadius: '8px',
-                boxShadow: '0 2px 8px rgba(22, 163, 74, 0.25)',
+                boxShadow: '0 1px 3px rgba(0, 0, 0, 0.05)',
                 cursor: 'pointer',
                 display: 'flex',
                 alignItems: 'center',
@@ -112,7 +112,7 @@ export default function AdminMonitoring({ letters, onOpenApprovalModal, onEditRe
           <table className="custom-table">
             <thead>
               <tr>
-                <th style={{ textAlign: 'center', background: 'rgba(224, 0, 0, 0.1)', color: 'var(--primary-red)', width: '100px' }}>
+                <th style={{ textAlign: 'center', background: 'var(--input-bg)', color: 'var(--primary-red)', width: '100px' }}>
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.25rem' }}>
                     <Hash size={14} /> No. Slot / Agenda
                   </div>
@@ -142,12 +142,12 @@ export default function AdminMonitoring({ letters, onOpenApprovalModal, onEditRe
                   const isWork = isWorkday(item.tanggal_ttd);
 
                   return (
-                    <tr key={item.id} style={{ background: !isWork ? 'rgba(239, 68, 68, 0.03)' : 'transparent' }}>
+                    <tr key={item.id} style={{ background: !isWork ? 'var(--input-bg)' : 'transparent' }}>
 
                       {/* Kolom Pertama Spesial Admin: Nomor Slot / Agenda */}
-                      <td style={{ textAlign: 'center', fontWeight: 800, color: 'var(--primary-red)', background: 'rgba(224, 0, 0, 0.03)' }}>
+                      <td style={{ textAlign: 'center', fontWeight: 800, color: 'var(--primary-red)', background: 'var(--input-bg)' }}>
                         {item.no_agenda ? (
-                          <span style={{ fontSize: '0.875rem', background: 'var(--card-bg)', padding: '0.25rem 0.6rem', borderRadius: '6px', border: '1px solid rgba(224, 0, 0, 0.3)', display: 'inline-block' }}>
+                          <span style={{ fontSize: '0.875rem', background: 'var(--card-bg)', padding: '0.25rem 0.6rem', borderRadius: '6px', border: '1px solid var(--card-border)', display: 'inline-block' }}>
                             #{String(item.no_agenda).padStart(6, '0')}
                           </span>
                         ) : (
@@ -160,9 +160,9 @@ export default function AdminMonitoring({ letters, onOpenApprovalModal, onEditRe
                       <td>{item.tanggal_pengajuan}</td>
                       <td>
                         <div style={{ display: 'flex', flexDirection: 'column' }}>
-                          <span style={{ fontWeight: 600, color: '#0369a1' }}>{item.tanggal_ttd}</span>
+                          <span style={{ fontWeight: 600, color: 'var(--text-main)' }}>{item.tanggal_ttd}</span>
                           {!isWork && (
-                            <span style={{ fontSize: '0.6875rem', color: '#dc2626', fontWeight: 700 }}>
+                            <span style={{ fontSize: '0.6875rem', color: 'var(--primary-red)', fontWeight: 700 }}>
                               (Hari Libur)
                             </span>
                           )}
@@ -176,7 +176,7 @@ export default function AdminMonitoring({ letters, onOpenApprovalModal, onEditRe
                       <td style={{ minWidth: '280px', maxWidth: '340px', fontWeight: 700, textTransform: 'uppercase' }}>{item.kepada}</td>
                       <td>
                         {isApproved ? (
-                          <span style={{ fontFamily: 'monospace', fontWeight: 700, fontSize: '0.8125rem', color: 'var(--primary-red)', background: 'rgba(224, 0, 0, 0.08)', padding: '0.35rem 0.6rem', borderRadius: '8px', border: '1px solid rgba(224, 0, 0, 0.2)', display: 'inline-block' }}>
+                          <span style={{ fontFamily: 'Helvetica Neue, Arial, sans-serif', fontWeight: 700, fontSize: '0.8125rem', color: 'var(--primary-red)', background: 'var(--input-bg)', padding: '0.35rem 0.6rem', borderRadius: '8px', border: '1px solid var(--card-border)', display: 'inline-block' }}>
                             {item.nomor_surat}
                           </span>
                         ) : (
@@ -187,14 +187,14 @@ export default function AdminMonitoring({ letters, onOpenApprovalModal, onEditRe
                       </td>
                       <td style={{ maxWidth: '240px' }}>{item.perihal}</td>
                       <td>
-                        <span style={{ fontFamily: 'monospace', fontSize: '0.75rem', fontWeight: 700, color: item.takah !== '-' ? 'var(--text-title)' : 'var(--text-muted)' }}>
+                        <span style={{ fontFamily: 'Helvetica Neue, Arial, sans-serif', fontSize: '0.75rem', fontWeight: 700, color: item.takah !== '-' ? 'var(--text-title)' : 'var(--text-muted)' }}>
                           {item.takah}
                         </span>
                       </td>
                       <td>
                         <div>
                           <div style={{ fontWeight: 600, color: 'var(--text-title)' }}>{item.pic}</div>
-                          <div style={{ fontSize: '0.75rem', color: '#2563eb' }}>{item.no_pic}</div>
+                          <div style={{ fontSize: '0.75rem', color: 'var(--text-main)' }}>{item.no_pic}</div>
                         </div>
                       </td>
                       <td>

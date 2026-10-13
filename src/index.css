@@ -1,86 +1,4 @@
-:root,
-[data-theme="light"] {
-  --primary-red: #e00000;
-  --primary-red-hover: #c00000;
-  --bg-color: #f8fafc;
-  --bg-image: radial-gradient(at 0% 0%, rgba(224, 0, 0, 0.07) 0px, transparent 50%),
-    radial-gradient(at 100% 100%, rgba(37, 99, 235, 0.05) 0px, transparent 50%);
-  --card-bg: #ffffff;
-  --card-border: #cbd5e1;
-  --card-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.07);
-  --text-title: #050811;
-  --text-main: #0f172a;
-  --text-muted: #334155;
-  --nav-bg: rgba(255, 255, 255, 0.95);
-  --input-bg: #f1f5f9;
-  --input-border: #94a3b8;
-  --input-text: #050811;
-  --table-head-bg: #f1f5f9;
-  --table-hover: #e2e8f0;
-
-  --status-pending-bg: #fef08a;
-  --status-pending-text: #713f12;
-  --status-nota-bg: #bae6fd;
-  --status-nota-text: #0369a1;
-  --status-approved-bg: #bbf7d0;
-  --status-approved-text: #14532d;
-  --status-done-bg: #dcfce7;
-  --status-done-text: #15803d;
-  --status-reschedule-bg: #bfdbfe;
-  --status-reschedule-text: #1e40af;
-  --status-cancel-bg: #fecaca;
-  --status-cancel-text: #991b1b;
-
-  --btn-secondary-bg: #f1f5f9;
-  --btn-secondary-text: #0f172a;
-  --btn-secondary-border: #94a3b8;
-  --btn-secondary-hover: #e2e8f0;
-
-  --modal-overlay-bg: rgba(15, 23, 42, 0.55);
-  --footer-bg: #ffffff;
-  --font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-}
-
-[data-theme="dark"] {
-  --primary-red: #e00000;
-  --primary-red-hover: #ff1a1a;
-  --bg-color: #080c15;
-  --bg-image: radial-gradient(at 0% 0%, rgba(224, 0, 0, 0.15) 0px, transparent 50%),
-    radial-gradient(at 100% 100%, rgba(37, 99, 235, 0.1) 0px, transparent 50%);
-  --card-bg: rgba(15, 22, 36, 0.92);
-  --card-border: rgba(255, 255, 255, 0.13);
-  --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45);
-  --text-title: #ffffff;
-  --text-main: #f8fafc;
-  --text-muted: #cbd5e1;
-  --nav-bg: rgba(15, 22, 36, 0.92);
-  --input-bg: rgba(8, 12, 21, 0.75);
-  --input-border: rgba(255, 255, 255, 0.16);
-  --input-text: #ffffff;
-  --table-head-bg: rgba(8, 12, 21, 0.85);
-  --table-hover: rgba(255, 255, 255, 0.05);
-
-  --status-pending-bg: rgba(234, 179, 8, 0.22);
-  --status-pending-text: #fde047;
-  --status-nota-bg: rgba(14, 165, 233, 0.25);
-  --status-nota-text: #7dd3fc;
-  --status-approved-bg: rgba(34, 197, 94, 0.25);
-  --status-approved-text: #86efac;
-  --status-done-bg: rgba(22, 163, 74, 0.22);
-  --status-done-text: #86efac;
-  --status-reschedule-bg: rgba(59, 130, 246, 0.22);
-  --status-reschedule-text: #93c5fd;
-  --status-cancel-bg: rgba(239, 68, 68, 0.22);
-  --status-cancel-text: #fca5a5;
-
-  --btn-secondary-bg: rgba(255, 255, 255, 0.1);
-  --btn-secondary-text: #ffffff;
-  --btn-secondary-border: rgba(255, 255, 255, 0.18);
-  --btn-secondary-hover: rgba(255, 255, 255, 0.18);
-
-  --modal-overlay-bg: rgba(0, 0, 0, 0.82);
-  --footer-bg: rgba(8, 12, 21, 0.95);
-}
+@import './styles/brand-tokens.css';
 
 * {
   box-sizing: border-box;
@@ -107,7 +25,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   color: var(--text-title);
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.25;
 }
@@ -119,29 +37,6 @@ p {
 }
 
 /* Background Watermark Logo Telkom Indonesia */
-body::before {
-  content: '';
-  position: fixed;
-  top: 52%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: min(540px, 80vw);
-  height: min(540px, 80vw);
-  background-image: url('/telkom-icon.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.045;
-  transition: opacity 0.3s ease, filter 0.3s ease;
-}
-
-[data-theme="dark"] body::before {
-  opacity: 0.035;
-  filter: brightness(1.2) drop-shadow(0 0 25px rgba(255, 255, 255, 0.2));
-}
-
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
@@ -180,12 +75,12 @@ body::before {
 /* Glassmorphism Card Utility */
 .glass-card {
   background: var(--card-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
   border: 1px solid var(--card-border);
-  border-radius: 16px;
+  border-radius: 8px;
   box-shadow: var(--card-shadow);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
 }
 
 /* Buttons */
@@ -195,12 +90,12 @@ body::before {
   justify-content: center;
   gap: 0.5rem;
   padding: 0.65rem 1.25rem;
-  border-radius: 10px;
+  border-radius: 8px;
   font-weight: 700;
   font-size: 0.9375rem;
   letter-spacing: 0.01em;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
   border: none;
   outline: none;
   white-space: nowrap;
@@ -212,16 +107,16 @@ body::before {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--primary-red) 0%, #b30000 100%);
+  background: var(--primary-red);
   color: #ffffff;
-  box-shadow: 0 4px 14px 0 rgba(224, 0, 0, 0.35);
+  box-shadow: var(--card-shadow);
   font-weight: 700;
 }
 
 .btn-primary:hover:not(:disabled) {
-  background: linear-gradient(135deg, var(--primary-red-hover) 0%, #990000 100%);
-  box-shadow: 0 6px 20px 0 rgba(224, 0, 0, 0.45);
-  transform: translateY(-1px);
+  background: var(--primary-red-hover);
+  box-shadow: var(--card-shadow);
+  transform: none;
 }
 
 .btn-secondary {
@@ -233,20 +128,20 @@ body::before {
 
 .btn-secondary:hover:not(:disabled) {
   background: var(--btn-secondary-hover);
-  transform: translateY(-1px);
+  transform: none;
 }
 
 .btn-danger {
   background: rgba(239, 68, 68, 0.15);
   color: #dc2626;
-  border: 1px solid rgba(239, 68, 68, 0.35);
+  border: 1px solid var(--card-border);
   font-weight: 700;
 }
 
 .btn-danger:hover:not(:disabled) {
   background: rgba(239, 68, 68, 0.25);
   color: #b91c1c;
-  transform: translateY(-1px);
+  transform: none;
 }
 
 .btn-icon {
@@ -263,8 +158,8 @@ body::before {
   right: 0;
   bottom: 0;
   background-color: var(--modal-overlay-bg);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -290,7 +185,7 @@ body::before {
 
 .modal-container::-webkit-scrollbar-thumb {
   background: var(--input-border);
-  border-radius: 99px;
+  border-radius: 8px;
 }
 
 /* Form Styles */
@@ -311,7 +206,7 @@ body::before {
 .form-input, .form-select, .form-textarea {
   width: 100%;
   padding: 0.65rem 0.95rem;
-  border-radius: 10px;
+  border-radius: 8px;
   background: var(--input-bg);
   border: 1.5px solid var(--input-border);
   color: var(--input-text);
@@ -319,12 +214,12 @@ body::before {
   font-size: 0.9375rem;
   font-weight: 500;
   outline: none;
-  transition: all 0.2s ease;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
 }
 
 .form-input:focus, .form-select:focus, .form-textarea:focus {
   border-color: var(--primary-red);
-  box-shadow: 0 0 0 3px rgba(224, 0, 0, 0.18);
+  box-shadow: var(--card-shadow);
 }
 
 /* Password fields use the application's own visibility button. */
@@ -345,7 +240,7 @@ input[type="password"]::-ms-clear {
   align-items: center;
   gap: 0.375rem;
   padding: 0.35rem 0.85rem;
-  border-radius: 9999px;
+  border-radius: 8px;
   font-size: 0.8125rem;
   font-weight: 700;
   letter-spacing: 0.01em;
@@ -357,42 +252,42 @@ input[type="password"]::-ms-clear {
 .badge-status.booking-tu {
   background: var(--status-pending-bg);
   color: var(--status-pending-text);
-  border: 1px solid rgba(234, 179, 8, 0.4);
+  border: 1px solid var(--card-border);
 }
 
 .badge-status.unggah-nota,
 .badge-status.menunggu-nota {
   background: var(--status-nota-bg);
   color: var(--status-nota-text);
-  border: 1px solid rgba(14, 165, 233, 0.45);
+  border: 1px solid var(--card-border);
 }
 
 .badge-status.disetujui,
 .badge-status.approved {
   background: var(--status-approved-bg);
   color: var(--status-approved-text);
-  border: 1px solid rgba(34, 197, 94, 0.45);
+  border: 1px solid var(--card-border);
 }
 
 .badge-status.selesai,
 .badge-status.done {
   background: var(--status-done-bg);
   color: var(--status-done-text);
-  border: 1px solid rgba(22, 163, 74, 0.4);
+  border: 1px solid var(--card-border);
 }
 
 .badge-status.jadwal-ulang,
 .badge-status.reschedule {
   background: var(--status-reschedule-bg);
   color: var(--status-reschedule-text);
-  border: 1px solid rgba(59, 130, 246, 0.4);
+  border: 1px solid var(--card-border);
 }
 
 .badge-status.dibatalkan,
 .badge-status.tidak-jadi {
   background: var(--status-cancel-bg);
   color: var(--status-cancel-text);
-  border: 1px solid rgba(239, 68, 68, 0.4);
+  border: 1px solid var(--card-border);
 }
 
 /* Tabel Responsif */
@@ -400,7 +295,7 @@ input[type="password"]::-ms-clear {
   width: 100%;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  border-radius: 12px;
+  border-radius: 8px;
 }
 
 .custom-table {
@@ -413,12 +308,12 @@ input[type="password"]::-ms-clear {
 .custom-table th {
   background: var(--table-head-bg);
   color: var(--text-title);
-  font-weight: 800;
+  font-weight: 700;
   padding: 0.9rem 1.1rem;
-  border-bottom: 2px solid var(--card-border);
+  border-bottom: 1px solid var(--card-border);
   white-space: nowrap;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  text-transform: none;
+  letter-spacing: normal;
   font-size: 0.8125rem;
 }
 
@@ -457,21 +352,21 @@ input[type="password"]::-ms-clear {
   position: relative;
   background: var(--card-bg);
   border: 1px solid var(--card-border);
-  border-radius: 20px;
+  border-radius: 8px;
   padding: 2rem 1.75rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.07);
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: var(--card-shadow);
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
   overflow: hidden;
   cursor: pointer;
 }
 
 [data-theme="dark"] .portal-module-card {
-  background: linear-gradient(180deg, rgba(26, 34, 52, 0.8) 0%, rgba(18, 24, 38, 0.95) 100%);
+  background: var(--card-bg);
   border: 1px solid rgba(255, 255, 255, 0.09);
-  box-shadow: 0 12px 35px -10px rgba(0, 0, 0, 0.4);
+  box-shadow: var(--card-shadow);
 }
 
 .portal-module-card::before {
@@ -481,20 +376,20 @@ input[type="password"]::-ms-clear {
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, transparent, rgba(224, 0, 0, 0.4), transparent);
+  background: var(--card-bg);
   opacity: 0;
   transition: opacity 0.35s ease;
 }
 
 .portal-module-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(224, 0, 0, 0.35);
-  box-shadow: 0 22px 45px -12px rgba(224, 0, 0, 0.12), 0 0 0 1px rgba(224, 0, 0, 0.1);
+  transform: none;
+  border-color: rgba(204, 0, 0, 0.35);
+  box-shadow: var(--card-shadow);
 }
 
 [data-theme="dark"] .portal-module-card:hover {
   border-color: rgba(255, 255, 255, 0.22);
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6), 0 0 25px rgba(224, 0, 0, 0.15);
+  box-shadow: var(--card-shadow);
 }
 
 .portal-module-card:hover::before {
@@ -506,7 +401,7 @@ input[type="password"]::-ms-clear {
   align-items: center;
   gap: 0.5rem;
   padding: 0.35rem 0.75rem;
-  border-radius: 99px;
+  border-radius: 8px;
   font-size: 0.725rem;
   font-weight: 700;
   letter-spacing: 0.04em;
@@ -521,7 +416,7 @@ input[type="password"]::-ms-clear {
   height: 7px;
   border-radius: 50%;
   background: #22c55e;
-  box-shadow: 0 0 8px #22c55e;
+  box-shadow: var(--card-shadow);
   display: inline-block;
   animation: pulseGlow 2s infinite ease-in-out;
 }
@@ -534,19 +429,19 @@ input[type="password"]::-ms-clear {
 .portal-icon-container {
   width: 52px;
   height: 52px;
-  border-radius: 14px;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: var(--input-bg);
   border: 1px solid var(--card-border);
   color: var(--text-title);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--card-shadow);
   transition: transform 0.3s ease;
 }
 
 .portal-module-card:hover .portal-icon-container {
-  transform: scale(1.08) rotate(2deg);
+  transform: none;
 }
 
 .portal-feature-item {
@@ -554,16 +449,16 @@ input[type="password"]::-ms-clear {
   align-items: center;
   gap: 0.75rem;
   padding: 0.75rem 0.9rem;
-  border-radius: 12px;
+  border-radius: 8px;
   background: var(--input-bg);
   border: 1px solid var(--card-border);
-  transition: all 0.2s ease;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
 }
 
 .portal-feature-item:hover {
   background: var(--card-bg);
-  border-color: rgba(224, 0, 0, 0.2);
-  transform: translateX(4px);
+  border-color: rgba(204, 0, 0, 0.2);
+  transform: none;
 }
 
 [data-theme="dark"] .portal-feature-item {
@@ -583,36 +478,36 @@ input[type="password"]::-ms-clear {
   gap: 0.5rem;
   width: 100%;
   padding: 0.875rem 1.25rem;
-  border-radius: 12px;
+  border-radius: 8px;
   font-weight: 700;
   font-size: 0.9375rem;
   border: none;
   cursor: pointer;
   background: var(--primary-red);
   color: #ffffff;
-  box-shadow: 0 4px 14px rgba(224, 0, 0, 0.3);
-  transition: all 0.25s ease;
+  box-shadow: var(--card-shadow);
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
 }
 
 [data-theme="dark"] .portal-cta-btn {
   background: var(--primary-red);
   color: #ffffff;
-  box-shadow: 0 4px 18px rgba(224, 0, 0, 0.4);
+  box-shadow: var(--card-shadow);
 }
 
 .portal-cta-btn:hover {
   background: var(--primary-red-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 22px rgba(224, 0, 0, 0.5);
+  transform: none;
+  box-shadow: var(--card-shadow);
 }
 
 [data-theme="dark"] .portal-cta-btn:hover {
-  background: #ff1a1a;
-  box-shadow: 0 8px 26px rgba(255, 0, 0, 0.5);
+  background: var(--primary-red-hover);
+  box-shadow: var(--card-shadow);
 }
 
 .portal-cta-btn:hover .cta-arrow {
-  transform: translateX(4px);
+  transform: none;
 }
 
 .cta-arrow {
@@ -652,8 +547,8 @@ input[type="password"]::-ms-clear {
   top: 0;
   z-index: 100;
   background: var(--nav-bg);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
   border-bottom: 1.5px solid var(--card-border);
   width: 100%;
 }
@@ -680,12 +575,12 @@ input[type="password"]::-ms-clear {
 .navbar-logo-box {
   width: 44px;
   height: 44px;
-  border-radius: 12px;
+  border-radius: 8px;
   background: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--card-shadow);
   padding: 4px;
   border: 1px solid var(--card-border);
   flex-shrink: 0;
@@ -713,7 +608,7 @@ input[type="password"]::-ms-clear {
 
 .navbar-brand-title {
   font-size: 1.25rem;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -0.025em;
   color: var(--text-title);
   margin: 0;
@@ -722,12 +617,12 @@ input[type="password"]::-ms-clear {
 
 .navbar-tag-badge {
   font-size: 0.6875rem;
-  font-weight: 800;
+  font-weight: 700;
   padding: 0.15rem 0.5rem;
   border-radius: 6px;
-  background: rgba(224, 0, 0, 0.12);
+  background: rgba(204, 0, 0, 0.12);
   color: var(--primary-red);
-  border: 1px solid rgba(224, 0, 0, 0.25);
+  border: 1px solid rgba(204, 0, 0, 0.25);
   letter-spacing: 0.04em;
   white-space: nowrap;
 }
@@ -756,7 +651,7 @@ input[type="password"]::-ms-clear {
   padding: 0.45rem 0.8rem;
   font-size: 0.8125rem;
   font-weight: 700;
-  border-radius: 10px;
+  border-radius: 8px;
   flex-shrink: 0;
 }
 
@@ -767,7 +662,7 @@ input[type="password"]::-ms-clear {
   font-size: 0.8125rem;
   padding: 0.45rem 0.85rem;
   font-weight: 700;
-  border-radius: 10px;
+  border-radius: 8px;
   flex-shrink: 0;
 }
 
@@ -775,7 +670,7 @@ input[type="password"]::-ms-clear {
   width: 38px;
   height: 38px;
   padding: 0;
-  border-radius: 50%;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -788,8 +683,8 @@ input[type="password"]::-ms-clear {
   gap: 0.45rem;
   background: rgba(34, 197, 94, 0.12);
   padding: 0.4rem 0.75rem;
-  border-radius: 10px;
-  border: 1px solid rgba(34, 197, 94, 0.3);
+  border-radius: 8px;
+  border: 1px solid var(--card-border);
   color: #16a34a;
   font-size: 0.8125rem;
   font-weight: 700;
@@ -835,7 +730,7 @@ input[type="password"]::-ms-clear {
 
 .calendar-title-text {
   font-size: 1.15rem;
-  font-weight: 800;
+  font-weight: 700;
   color: var(--text-title);
   margin: 0;
 }
@@ -859,7 +754,7 @@ input[type="password"]::-ms-clear {
   gap: 0.35rem;
   background: var(--input-bg);
   padding: 0.25rem;
-  border-radius: 10px;
+  border-radius: 8px;
   border: 1px solid var(--card-border);
 }
 
@@ -890,7 +785,7 @@ input[type="password"]::-ms-clear {
   gap: 0.35rem;
   background: var(--input-bg);
   padding: 0.2rem 0.4rem;
-  border-radius: 10px;
+  border-radius: 8px;
   border: 1px solid var(--card-border);
 }
 
@@ -914,7 +809,7 @@ input[type="password"]::-ms-clear {
 
 .calendar-month-label {
   font-size: 0.8125rem;
-  font-weight: 800;
+  font-weight: 700;
   color: var(--text-title);
   min-width: 120px;
   text-align: center;
@@ -938,7 +833,7 @@ input[type="password"]::-ms-clear {
 .calendar-weekday-header {
   text-align: center;
   font-size: 0.75rem;
-  font-weight: 800;
+  font-weight: 700;
   padding: 0.5rem 0.25rem;
   color: var(--text-muted);
   text-transform: uppercase;
@@ -953,18 +848,18 @@ input[type="password"]::-ms-clear {
 .calendar-day-cell {
   min-height: 85px;
   padding: 0.5rem;
-  border-radius: 10px;
+  border-radius: 8px;
   cursor: pointer;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
   user-select: none;
 }
 
 .calendar-day-cell:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: none;
+  box-shadow: var(--card-shadow);
 }
 
 /* Tablet & iPad (max-width: 992px) */
@@ -1016,7 +911,7 @@ input[type="password"]::-ms-clear {
   .navbar-logo-box {
     width: 36px !important;
     height: 36px !important;
-    border-radius: 9px !important;
+    border-radius: 8px !important;
   }
 
   .nav-home-btn {
@@ -1037,7 +932,7 @@ input[type="password"]::-ms-clear {
   .hero-container {
     padding: 1.5rem 1rem !important;
     gap: 1.25rem !important;
-    border-radius: 16px !important;
+    border-radius: 8px !important;
   }
 
   .hero-title {
@@ -1050,12 +945,12 @@ input[type="password"]::-ms-clear {
 
   .glass-card {
     padding: 1.15rem 0.9rem !important;
-    border-radius: 14px !important;
+    border-radius: 8px !important;
   }
 
   .portal-module-card {
     padding: 1.35rem 1.15rem !important;
-    border-radius: 16px !important;
+    border-radius: 8px !important;
   }
 
   .tab-nav-container {
@@ -1252,11 +1147,11 @@ input[type="password"]::-ms-clear {
   width: 100%;
   max-width: 440px;
   padding: 2.75rem 2.25rem 2rem;
-  border-radius: 28px;
+  border-radius: 8px;
   background: var(--card-bg);
   border: 1px solid var(--card-border);
-  box-shadow: 0 24px 60px -12px rgba(0, 0, 0, 0.14);
-  backdrop-filter: blur(20px);
+  box-shadow: var(--card-shadow);
+  backdrop-filter: none;
   animation: fadeInScale 0.35s ease-out;
   display: flex;
   flex-direction: column;
@@ -1289,17 +1184,17 @@ input[type="password"]::-ms-clear {
 .login-telkom-logo {
   height: 56px;
   object-fit: contain;
-  filter: drop-shadow(0 4px 12px rgba(224, 0, 0, 0.18));
+  filter: drop-shadow(0 4px 12px rgba(204, 0, 0, 0.18));
   transition: transform 0.3s ease;
 }
 
 .login-telkom-logo:hover {
-  transform: scale(1.05);
+  transform: none;
 }
 
 .login-portal-title {
   font-size: 1.75rem;
-  font-weight: 800;
+  font-weight: 700;
   color: var(--text-title);
   letter-spacing: -0.025em;
   margin: 0 0 0.35rem 0;
@@ -1336,27 +1231,27 @@ input[type="password"]::-ms-clear {
   justify-content: center;
   gap: 0.75rem;
   padding: 0.9rem 1.25rem;
-  border-radius: 14px;
-  background: rgba(224, 0, 0, 0.05);
-  color: var(--primary-red);
-  border: 1.5px solid rgba(224, 0, 0, 0.3);
+  border-radius: 8px;
+  background: var(--primary-red);
+  color: #ffffff;
+  border: 1px solid var(--primary-red);
   font-size: 0.95rem;
   font-weight: 700;
   cursor: pointer;
-  transition: all 0.2s ease;
-  box-shadow: 0 2px 8px rgba(224, 0, 0, 0.04);
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  box-shadow: var(--card-shadow);
 }
 
 [data-theme="dark"] .btn-login-sso-telkom-single {
-  background: rgba(224, 0, 0, 0.12);
-  border-color: rgba(224, 0, 0, 0.4);
+  background: var(--primary-red);
+  border-color: var(--primary-red);
 }
 
 .btn-login-sso-telkom-single:hover:not(:disabled) {
-  background: rgba(224, 0, 0, 0.12);
-  transform: translateY(-1px);
-  border-color: var(--primary-red);
-  box-shadow: 0 6px 20px rgba(224, 0, 0, 0.15);
+  background: var(--primary-red-hover);
+  transform: none;
+  border-color: var(--primary-red-hover);
+  box-shadow: var(--card-shadow);
 }
 
 .btn-login-sso-telkom-single:disabled {
@@ -1379,14 +1274,148 @@ input[type="password"]::-ms-clear {
 }
 
 .btn-dropdown-logout:hover {
-  background: #e00000 !important;
+  background: var(--primary-red) !important;
   color: #ffffff !important;
+}
+
+/* Corporate overview: clear hierarchy with the two core services first. */
+.main-content {
+  padding: 2rem;
+}
+
+.hero-container {
+  background: transparent !important;
+  padding: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.hero-container > div:first-child {
+  max-width: 820px !important;
+  padding: 0.5rem 0 1.75rem;
+}
+
+.hero-container > div:first-child > div:first-child {
+  background: transparent !important;
+  padding: 0 !important;
+  font-size: 0.8125rem !important;
+  font-weight: 600 !important;
+  letter-spacing: normal !important;
+}
+
+.hero-title {
+  font-size: clamp(1.5rem, 3vw, 2rem) !important;
+  line-height: 1.3 !important;
+  letter-spacing: -0.02em !important;
+}
+
+.hero-subtitle {
+  max-width: 72ch;
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+}
+
+.hero-container .lucide-sparkles,
+.portal-module-card::before {
+  display: none;
+}
+
+.portal-module-card,
+[data-theme="dark"] .portal-module-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  padding: 1.75rem;
+  box-shadow: var(--card-shadow);
+}
+
+.portal-module-card:hover,
+[data-theme="dark"] .portal-module-card:hover {
+  border-color: var(--primary-red);
+  box-shadow: var(--card-shadow);
+}
+
+.portal-module-card li svg {
+  color: var(--text-muted);
+  stroke: currentColor;
+}
+
+.portal-module-card h3 {
+  font-size: 1.25rem !important;
+}
+
+.portal-module-card h3 + span {
+  color: var(--text-muted) !important;
+  font-weight: 500 !important;
+  letter-spacing: normal !important;
+  text-transform: none !important;
+}
+
+.portal-icon-container {
+  box-shadow: none;
+  background: var(--input-bg);
+}
+
+.login-clean-card {
+  padding: 2.5rem 2rem 2rem;
+  animation: none;
+}
+
+.login-clean-card h1 {
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+}
+
+.btn-login-sso-telkom-single svg {
+  color: inherit;
+  stroke: currentColor;
+}
+
+.login-page-clean-container > div:first-child {
+  top: 1rem !important;
+  right: 1rem !important;
+}
+
+.user-profile-trigger-btn,
+.user-profile-dropdown,
+.btn-dropdown-logout {
+  border-radius: 8px !important;
+}
+
+.user-profile-dropdown {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    padding: 1.5rem 1rem;
+  }
+
+  .hero-container > div:first-child {
+    padding-bottom: 0.5rem;
+  }
+
+  .navbar-container {
+    min-height: 68px;
+  }
+
+  .nav-user-text {
+    display: none;
+  }
+
+  .portal-cards-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 1rem !important;
+  }
+
+  .login-clean-card {
+    padding: 2rem 1.5rem;
+  }
 }
 
 @keyframes fadeInSlide {
   from {
     opacity: 0;
-    transform: translateY(-8px);
+    transform: none;
   }
   to {
     opacity: 1;

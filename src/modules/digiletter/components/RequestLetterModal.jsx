@@ -128,7 +128,7 @@ export default function RequestLetterModal({ isOpen, onClose, onSubmitRequest, o
           
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             <div className="form-group">
-              <label className="form-label">Tanggal Pengajuan <span style={{ color: 'red' }}>*</span></label>
+              <label className="form-label">Tanggal Pengajuan <span style={{ color: 'var(--primary-red)' }}>*</span></label>
               <input 
                 type="date" 
                 name="tanggal_pengajuan" 
@@ -136,11 +136,11 @@ export default function RequestLetterModal({ isOpen, onClose, onSubmitRequest, o
                 onChange={handleChange} 
                 className="form-input"
               />
-              {errors.tanggal_pengajuan && <span style={{ fontSize: '0.75rem', color: 'red' }}>{errors.tanggal_pengajuan}</span>}
+              {errors.tanggal_pengajuan && <span style={{ fontSize: '0.75rem', color: 'var(--primary-red)' }}>{errors.tanggal_pengajuan}</span>}
             </div>
 
             <div className="form-group">
-              <label className="form-label">Tanggal TTD (EVP) <span style={{ color: 'red' }}>*</span></label>
+              <label className="form-label">Tanggal TTD (EVP) <span style={{ color: 'var(--primary-red)' }}>*</span></label>
               <input 
                 type="date" 
                 name="tanggal_ttd" 
@@ -148,13 +148,13 @@ export default function RequestLetterModal({ isOpen, onClose, onSubmitRequest, o
                 onChange={handleChange} 
                 className="form-input"
               />
-              {errors.tanggal_ttd && <span style={{ fontSize: '0.75rem', color: 'red' }}>{errors.tanggal_ttd}</span>}
+              {errors.tanggal_ttd && <span style={{ fontSize: '0.75rem', color: 'var(--primary-red)' }}>{errors.tanggal_ttd}</span>}
             </div>
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             <div className="form-group">
-              <label className="form-label">Jenis Surat <span style={{ color: 'red' }}>*</span></label>
+              <label className="form-label">Jenis Surat <span style={{ color: 'var(--primary-red)' }}>*</span></label>
               <select 
                 name="jenis_surat" 
                 value={formData.jenis_surat} 
@@ -165,11 +165,11 @@ export default function RequestLetterModal({ isOpen, onClose, onSubmitRequest, o
                   <option key={idx} value={item}>{item}</option>
                 ))}
               </select>
-              {errors.jenis_surat && <span style={{ fontSize: '0.75rem', color: 'red' }}>{errors.jenis_surat}</span>}
+              {errors.jenis_surat && <span style={{ fontSize: '0.75rem', color: 'var(--primary-red)' }}>{errors.jenis_surat}</span>}
             </div>
 
             <div className="form-group">
-              <label className="form-label">Kode Perihal <span style={{ color: 'red' }}>*</span></label>
+              <label className="form-label">Kode Perihal <span style={{ color: 'var(--primary-red)' }}>*</span></label>
               <select 
                 name="kode_perihal" 
                 value={formData.kode_perihal} 
@@ -180,12 +180,12 @@ export default function RequestLetterModal({ isOpen, onClose, onSubmitRequest, o
                   <option key={idx} value={item}>{item}</option>
                 ))}
               </select>
-              {errors.kode_perihal && <span style={{ fontSize: '0.75rem', color: 'red' }}>{errors.kode_perihal}</span>}
+              {errors.kode_perihal && <span style={{ fontSize: '0.75rem', color: 'var(--primary-red)' }}>{errors.kode_perihal}</span>}
             </div>
           </div>
 
           <div className="form-group">
-            <label className="form-label">Spesifikasi Surat <span style={{ color: 'red' }}>*</span></label>
+            <label className="form-label">Spesifikasi Surat <span style={{ color: 'var(--primary-red)' }}>*</span></label>
             <select 
               name="spesifikasi_surat" 
               value={formData.spesifikasi_surat} 
@@ -196,11 +196,11 @@ export default function RequestLetterModal({ isOpen, onClose, onSubmitRequest, o
                 <option key={idx} value={item.value}>{item.label}</option>
               ))}
             </select>
-            {errors.spesifikasi_surat && <span style={{ fontSize: '0.75rem', color: 'red' }}>{errors.spesifikasi_surat}</span>}
+            {errors.spesifikasi_surat && <span style={{ fontSize: '0.75rem', color: 'var(--primary-red)' }}>{errors.spesifikasi_surat}</span>}
           </div>
 
           <div className="form-group">
-            <label className="form-label">Kepada (Tujuan Surat) <span style={{ color: 'red' }}>*</span></label>
+            <label className="form-label">Kepada (Tujuan Surat) <span style={{ color: 'var(--primary-red)' }}>*</span></label>
             <input 
               type="text" 
               name="kepada" 
@@ -209,11 +209,11 @@ export default function RequestLetterModal({ isOpen, onClose, onSubmitRequest, o
               onChange={handleChange} 
               className="form-input"
             />
-            {errors.kepada && <span style={{ fontSize: '0.75rem', color: 'red' }}>{errors.kepada}</span>}
+            {errors.kepada && <span style={{ fontSize: '0.75rem', color: 'var(--primary-red)' }}>{errors.kepada}</span>}
           </div>
 
           <div className="form-group">
-            <label className="form-label">Perihal <span style={{ color: 'red' }}>*</span></label>
+            <label className="form-label">Perihal <span style={{ color: 'var(--primary-red)' }}>*</span></label>
             <textarea 
               name="perihal" 
               rows="3" 
@@ -222,12 +222,12 @@ export default function RequestLetterModal({ isOpen, onClose, onSubmitRequest, o
               onChange={handleChange} 
               className="form-textarea"
             />
-            {errors.perihal && <span style={{ fontSize: '0.75rem', color: 'red' }}>{errors.perihal}</span>}
+            {errors.perihal && <span style={{ fontSize: '0.75rem', color: 'var(--primary-red)' }}>{errors.perihal}</span>}
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             <div className="form-group">
-              <label className="form-label">PIC (Pemohon) <span style={{ color: 'red' }}>*</span></label>
+              <label className="form-label">PIC (Pemohon) <span style={{ color: 'var(--primary-red)' }}>*</span></label>
               <input 
                 type="text" 
                 name="pic" 
@@ -236,11 +236,11 @@ export default function RequestLetterModal({ isOpen, onClose, onSubmitRequest, o
                 onChange={handleChange} 
                 className="form-input"
               />
-              {errors.pic && <span style={{ fontSize: '0.75rem', color: 'red' }}>{errors.pic}</span>}
+              {errors.pic && <span style={{ fontSize: '0.75rem', color: 'var(--primary-red)' }}>{errors.pic}</span>}
             </div>
 
             <div className="form-group">
-              <label className="form-label">No. PIC / Telegram <span style={{ color: 'red' }}>*</span></label>
+              <label className="form-label">No. PIC / Telegram <span style={{ color: 'var(--primary-red)' }}>*</span></label>
               <input 
                 type="text" 
                 name="no_pic" 
@@ -249,7 +249,7 @@ export default function RequestLetterModal({ isOpen, onClose, onSubmitRequest, o
                 onChange={handleChange} 
                 className="form-input"
               />
-              {errors.no_pic && <span style={{ fontSize: '0.75rem', color: 'red' }}>{errors.no_pic}</span>}
+              {errors.no_pic && <span style={{ fontSize: '0.75rem', color: 'var(--primary-red)' }}>{errors.no_pic}</span>}
             </div>
           </div>
 

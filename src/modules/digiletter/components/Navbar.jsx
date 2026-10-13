@@ -79,7 +79,7 @@ export default function Navbar({
               </button>
 
               {isUserLoggedIn && (
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', background: 'var(--input-bg)', padding: '0.35rem 0.75rem', borderRadius: '10px', border: '1px solid var(--card-border)' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', background: 'var(--input-bg)', padding: '0.35rem 0.75rem', borderRadius: '8px', border: '1px solid var(--card-border)' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', fontSize: '0.8125rem', color: 'var(--text-main)', fontWeight: 700 }}>
                     <User size={15} style={{ color: 'var(--primary-red)' }} />
                     <span className="nav-btn-text">{currentUser || 'User'}</span>

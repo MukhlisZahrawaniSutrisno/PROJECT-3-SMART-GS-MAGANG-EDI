@@ -1,74 +1,4 @@
-:root,
-[data-theme="light"] {
-  --primary-red: #e00000;
-  --primary-red-hover: #c00000;
-  --bg-color: #f8fafc;
-  --bg-image: radial-gradient(at 0% 0%, rgba(224, 0, 0, 0.07) 0px, transparent 50%),
-    radial-gradient(at 100% 100%, rgba(37, 99, 235, 0.05) 0px, transparent 50%);
-  --card-bg: #ffffff;
-  --card-border: #cbd5e1;
-  --card-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.07);
-  --text-title: #050811;
-  --text-main: #0f172a;
-  --text-muted: #334155;
-  --nav-bg: rgba(255, 255, 255, 0.95);
-  --input-bg: #f1f5f9;
-  --input-border: #94a3b8;
-  --input-text: #050811;
-  --table-head-bg: #f1f5f9;
-  --table-hover: #e2e8f0;
-
-  --status-pending-bg: #fef08a;
-  --status-pending-text: #713f12;
-  --status-approved-bg: #bbf7d0;
-  --status-approved-text: #14532d;
-  --status-cancel-bg: #fecaca;
-  --status-cancel-text: #991b1b;
-
-  --btn-secondary-bg: #f1f5f9;
-  --btn-secondary-text: #0f172a;
-  --btn-secondary-border: #94a3b8;
-  --btn-secondary-hover: #e2e8f0;
-
-  --modal-overlay-bg: rgba(15, 23, 42, 0.55);
-  --footer-bg: #ffffff;
-  --font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-}
-
-[data-theme="dark"] {
-  --primary-red: #e00000;
-  --primary-red-hover: #ff1a1a;
-  --bg-color: #080c15;
-  --bg-image: radial-gradient(at 0% 0%, rgba(224, 0, 0, 0.15) 0px, transparent 50%),
-    radial-gradient(at 100% 100%, rgba(37, 99, 235, 0.1) 0px, transparent 50%);
-  --card-bg: rgba(15, 22, 36, 0.92);
-  --card-border: rgba(255, 255, 255, 0.13);
-  --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45);
-  --text-title: #ffffff;
-  --text-main: #f8fafc;
-  --text-muted: #cbd5e1;
-  --nav-bg: rgba(15, 22, 36, 0.92);
-  --input-bg: rgba(8, 12, 21, 0.75);
-  --input-border: rgba(255, 255, 255, 0.16);
-  --input-text: #ffffff;
-  --table-head-bg: rgba(8, 12, 21, 0.85);
-  --table-hover: rgba(255, 255, 255, 0.05);
-
-  --status-pending-bg: rgba(234, 179, 8, 0.22);
-  --status-pending-text: #fde047;
-  --status-approved-bg: rgba(34, 197, 94, 0.25);
-  --status-approved-text: #86efac;
-  --status-cancel-bg: rgba(239, 68, 68, 0.22);
-  --status-cancel-text: #fca5a5;
-
-  --btn-secondary-bg: rgba(255, 255, 255, 0.1);
-  --btn-secondary-text: #ffffff;
-  --btn-secondary-border: rgba(255, 255, 255, 0.18);
-  --btn-secondary-hover: rgba(255, 255, 255, 0.18);
-
-  --modal-overlay-bg: rgba(0, 0, 0, 0.82);
-  --footer-bg: rgba(8, 12, 21, 0.95);
-}
+@import '../../styles/brand-tokens.css';
 
 * {
   box-sizing: border-box;
@@ -95,7 +25,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   color: var(--text-title);
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.25;
 }
@@ -107,29 +37,6 @@ p {
 }
 
 /* Background Watermark Logo Telkom Indonesia */
-body::before {
-  content: '';
-  position: fixed;
-  top: 52%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: min(540px, 80vw);
-  height: min(540px, 80vw);
-  background-image: url('/telkom-icon.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.045;
-  transition: opacity 0.3s ease, filter 0.3s ease;
-}
-
-[data-theme="dark"] body::before {
-  opacity: 0.035;
-  filter: brightness(1.2) drop-shadow(0 0 25px rgba(255, 255, 255, 0.2));
-}
-
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
@@ -168,12 +75,12 @@ body::before {
 /* Glassmorphism Card Utility */
 .glass-card {
   background: var(--card-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
   border: 1px solid var(--card-border);
-  border-radius: 16px;
+  border-radius: 8px;
   box-shadow: var(--card-shadow);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
 }
 
 /* Buttons */
@@ -183,12 +90,12 @@ body::before {
   justify-content: center;
   gap: 0.5rem;
   padding: 0.65rem 1.25rem;
-  border-radius: 10px;
+  border-radius: 8px;
   font-weight: 700;
   font-size: 0.9375rem;
   letter-spacing: 0.01em;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
   border: none;
   outline: none;
   white-space: nowrap;
@@ -200,16 +107,16 @@ body::before {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--primary-red) 0%, #b30000 100%);
+  background: var(--primary-red);
   color: #ffffff;
-  box-shadow: 0 4px 14px 0 rgba(224, 0, 0, 0.35);
+  box-shadow: var(--card-shadow);
   font-weight: 700;
 }
 
 .btn-primary:hover:not(:disabled) {
-  background: linear-gradient(135deg, var(--primary-red-hover) 0%, #990000 100%);
-  box-shadow: 0 6px 20px 0 rgba(224, 0, 0, 0.45);
-  transform: translateY(-1px);
+  background: var(--primary-red-hover);
+  box-shadow: var(--card-shadow);
+  transform: none;
 }
 
 .btn-secondary {
@@ -221,20 +128,20 @@ body::before {
 
 .btn-secondary:hover:not(:disabled) {
   background: var(--btn-secondary-hover);
-  transform: translateY(-1px);
+  transform: none;
 }
 
 .btn-danger {
   background: rgba(239, 68, 68, 0.15);
   color: #dc2626;
-  border: 1px solid rgba(239, 68, 68, 0.35);
+  border: 1px solid var(--card-border);
   font-weight: 700;
 }
 
 .btn-danger:hover:not(:disabled) {
   background: rgba(239, 68, 68, 0.25);
   color: #b91c1c;
-  transform: translateY(-1px);
+  transform: none;
 }
 
 .btn-icon {
@@ -251,8 +158,8 @@ body::before {
   right: 0;
   bottom: 0;
   background-color: var(--modal-overlay-bg);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -278,7 +185,7 @@ body::before {
 
 .modal-container::-webkit-scrollbar-thumb {
   background: var(--input-border);
-  border-radius: 99px;
+  border-radius: 8px;
 }
 
 /* Form Styles */
@@ -299,7 +206,7 @@ body::before {
 .form-input, .form-select, .form-textarea {
   width: 100%;
   padding: 0.65rem 0.95rem;
-  border-radius: 10px;
+  border-radius: 8px;
   background: var(--input-bg);
   border: 1.5px solid var(--input-border);
   color: var(--input-text);
@@ -307,12 +214,12 @@ body::before {
   font-size: 0.9375rem;
   font-weight: 500;
   outline: none;
-  transition: all 0.2s ease;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
 }
 
 .form-input:focus, .form-select:focus, .form-textarea:focus {
   border-color: var(--primary-red);
-  box-shadow: 0 0 0 3px rgba(224, 0, 0, 0.18);
+  box-shadow: var(--card-shadow);
 }
 
 .form-select option {
@@ -327,7 +234,7 @@ body::before {
   align-items: center;
   gap: 0.375rem;
   padding: 0.35rem 0.85rem;
-  border-radius: 9999px;
+  border-radius: 8px;
   font-size: 0.8125rem;
   font-weight: 700;
   letter-spacing: 0.01em;
@@ -337,19 +244,19 @@ body::before {
 .badge-status.menunggu {
   background: var(--status-pending-bg);
   color: var(--status-pending-text);
-  border: 1px solid rgba(234, 179, 8, 0.4);
+  border: 1px solid var(--card-border);
 }
 
 .badge-status.disetujui {
   background: var(--status-approved-bg);
   color: var(--status-approved-text);
-  border: 1px solid rgba(34, 197, 94, 0.45);
+  border: 1px solid var(--card-border);
 }
 
 .badge-status.dibatalkan {
   background: var(--status-cancel-bg);
   color: var(--status-cancel-text);
-  border: 1px solid rgba(239, 68, 68, 0.4);
+  border: 1px solid var(--card-border);
 }
 
 /* Tabel Responsif */
@@ -357,7 +264,7 @@ body::before {
   width: 100%;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  border-radius: 12px;
+  border-radius: 8px;
 }
 
 .custom-table {
@@ -370,12 +277,12 @@ body::before {
 .custom-table th {
   background: var(--table-head-bg);
   color: var(--text-title);
-  font-weight: 800;
+  font-weight: 700;
   padding: 0.9rem 1.1rem;
-  border-bottom: 2px solid var(--card-border);
+  border-bottom: 1px solid var(--card-border);
   white-space: nowrap;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  text-transform: none;
+  letter-spacing: normal;
   font-size: 0.8125rem;
 }
 
@@ -451,7 +358,7 @@ body::before {
 
   .glass-card {
     padding: 1.15rem 0.9rem !important;
-    border-radius: 14px !important;
+    border-radius: 8px !important;
   }
 
   .stat-grid-bar {

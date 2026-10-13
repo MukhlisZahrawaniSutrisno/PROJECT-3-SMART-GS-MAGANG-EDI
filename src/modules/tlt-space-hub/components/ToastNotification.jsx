@@ -15,9 +15,9 @@ export default function ToastNotification({ toast, onClose }) {
 
   const getIcon = () => {
     if (toast.icon === 'admin') {
-      return <ShieldCheck size={24} style={{ color: '#16a34a', flexShrink: 0 }} />;
+      return <ShieldCheck size={24} style={{ color: 'var(--text-main)', flexShrink: 0 }} />;
     }
-    return <CheckCircle2 size={24} style={{ color: '#16a34a', flexShrink: 0 }} />;
+    return <CheckCircle2 size={24} style={{ color: 'var(--text-main)', flexShrink: 0 }} />;
   };
 
   return (
@@ -30,13 +30,13 @@ export default function ToastNotification({ toast, onClose }) {
         minWidth: '340px',
         maxWidth: '440px',
         background: 'var(--card-bg)',
-        backdropFilter: 'blur(16px)',
-        WebkitBackdropFilter: 'blur(16px)',
+        backdropFilter: 'none',
+        WebkitBackdropFilter: 'none',
         border: '1px solid var(--card-border)',
-        borderLeft: '4px solid #16a34a',
-        borderRadius: '12px',
+        borderLeft: '4px solid var(--card-border)',
+        borderRadius: '8px',
         padding: '1rem 1.25rem',
-        boxShadow: '0 10px 30px -5px rgba(0, 0, 0, 0.25)',
+        boxShadow: '0 1px 3px rgba(0, 0, 0, 0.05)',
         display: 'flex',
         alignItems: 'flex-start',
         gap: '0.875rem',
@@ -76,8 +76,8 @@ export default function ToastNotification({ toast, onClose }) {
           bottom: 0,
           left: 0,
           height: '3px',
-          background: '#16a34a',
-          borderRadius: '0 0 0 12px',
+          background: 'var(--input-bg)',
+          borderRadius: '0 0 0 8px',
           width: '100%',
           animation: 'shrinkWidth 4s linear forwards'
         }}

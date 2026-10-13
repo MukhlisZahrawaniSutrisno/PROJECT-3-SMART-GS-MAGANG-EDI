@@ -1,0 +1,276 @@
+/* Telkom corporate portal palette. Keep all entrypoints on the same tokens. */
+:root,
+[data-theme="light"] {
+  color-scheme: light;
+  --primary-red: #cc0000;
+  --primary-red-hover: #a80000;
+  --bg-color: #f8f9fa;
+  --bg-main: var(--bg-color);
+  --bg-image: none;
+  --card-bg: #ffffff;
+  --card-border: #e5e7eb;
+  --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  --text-title: #1a1a1a;
+  --text-main: #333333;
+  --text-muted: #666666;
+  --nav-bg: #ffffff;
+  --input-bg: #f8f9fa;
+  --input-border: #b8bdc5;
+  --input-text: #1a1a1a;
+  --table-head-bg: #f8f9fa;
+  --table-hover: #f8f9fa;
+  --status-pending-bg: #f3f4f6;
+  --status-pending-text: #525252;
+  --status-nota-bg: #f3f4f6;
+  --status-nota-text: #525252;
+  --status-approved-bg: #f3f4f6;
+  --status-approved-text: #333333;
+  --status-done-bg: #f3f4f6;
+  --status-done-text: #333333;
+  --status-reschedule-bg: #f3f4f6;
+  --status-reschedule-text: #525252;
+  --status-cancel-bg: #fff1f1;
+  --status-cancel-text: #cc0000;
+  --btn-secondary-bg: #f3f4f6;
+  --btn-secondary-text: #333333;
+  --btn-secondary-border: #d1d5db;
+  --btn-secondary-hover: #e5e7eb;
+  --modal-overlay-bg: rgba(26, 26, 26, 0.45);
+  --footer-bg: #ffffff;
+  --font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/* Preserve the existing theme control, with neutral corporate dark surfaces. */
+[data-theme="dark"] {
+  color-scheme: dark;
+  --primary-red: #e31e24;
+  --primary-red-hover: #cc0000;
+  --bg-color: #1a1a1a;
+  --card-bg: #242424;
+  --card-border: #444444;
+  --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  --text-title: #ffffff;
+  --text-main: #f3f4f6;
+  --text-muted: #c4c4c4;
+  --nav-bg: #ffffff;
+  --input-bg: #2d2d2d;
+  --input-border: #737373;
+  --input-text: #ffffff;
+  --table-head-bg: #2d2d2d;
+  --table-hover: #303030;
+  --status-pending-bg: #333333;
+  --status-pending-text: #e5e7eb;
+  --status-nota-bg: #333333;
+  --status-nota-text: #e5e7eb;
+  --status-approved-bg: #333333;
+  --status-approved-text: #f3f4f6;
+  --status-done-bg: #333333;
+  --status-done-text: #f3f4f6;
+  --status-reschedule-bg: #333333;
+  --status-reschedule-text: #e5e7eb;
+  --status-cancel-bg: #3c2222;
+  --status-cancel-text: #ffb4b4;
+  --btn-secondary-bg: #333333;
+  --btn-secondary-text: #f3f4f6;
+  --btn-secondary-border: #737373;
+  --btn-secondary-hover: #444444;
+  --modal-overlay-bg: rgba(0, 0, 0, 0.6);
+  --footer-bg: #242424;
+}
+
+body :is(button, input, select, textarea, a) {
+  font-family: var(--font-family);
+}
+
+body :is(button, input, select, textarea, [role="button"]) {
+  border-radius: 8px;
+}
+
+body :is(button, a, input, select, textarea, [tabindex]):focus-visible {
+  outline: 2px solid var(--primary-red);
+  outline-offset: 3px;
+}
+
+body :is(.form-input, .form-select, .form-textarea):focus {
+  border-color: var(--primary-red);
+  box-shadow: 0 0 0 3px rgba(204, 0, 0, 0.1);
+}
+
+body .app-header {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  /* Navigation stays white in both existing theme modes. */
+  --text-title: #1a1a1a;
+  --text-main: #333333;
+  --text-muted: #666666;
+  --input-bg: #f8f9fa;
+  --card-bg: #ffffff;
+  --card-border: #e5e7eb;
+  --btn-secondary-bg: #f3f4f6;
+  --btn-secondary-text: #333333;
+  --btn-secondary-border: #d1d5db;
+  --btn-secondary-hover: #e5e7eb;
+}
+
+body .navbar-container {
+  max-width: 1440px;
+  min-height: 80px;
+  padding: 1rem 2rem;
+}
+
+body .navbar-logo-box {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+body .navbar-logo-box,
+body .navbar-left > img {
+  order: -1;
+  flex-shrink: 0;
+}
+
+body .navbar-brand-title {
+  font-weight: 700;
+  letter-spacing: normal;
+}
+
+body .nav-theme-btn {
+  padding: 0;
+  color: var(--btn-secondary-text);
+}
+
+body .nav-theme-btn svg {
+  stroke: currentColor;
+}
+
+body :is(h1, h2, h3, h4) {
+  font-weight: 700 !important;
+}
+
+body button {
+  font-weight: 600 !important;
+}
+
+body :is(.admin-badge-box, .navbar-tag-badge) {
+  background: var(--input-bg);
+  border: 1px solid var(--card-border);
+  color: var(--text-muted);
+  font-weight: 600;
+  letter-spacing: normal;
+}
+
+body :is(.glass-card, .portal-module-card, .login-clean-card) {
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+body :is(.btn-primary, .portal-cta-btn, .btn-login-sso-telkom-single) {
+  background: var(--primary-red);
+  color: #ffffff;
+  border: 1px solid var(--primary-red);
+  box-shadow: none;
+  font-weight: 600;
+}
+
+body :is(.btn-primary, .portal-cta-btn, .btn-login-sso-telkom-single):hover:not(:disabled) {
+  background: var(--primary-red-hover) !important;
+  border-color: var(--primary-red-hover) !important;
+  box-shadow: none;
+  transform: none;
+}
+
+body :is(.btn-secondary, .btn-danger) {
+  box-shadow: none;
+  font-weight: 600;
+}
+
+body .btn-secondary:hover:not(:disabled) {
+  background: var(--btn-secondary-hover) !important;
+}
+
+body .btn-danger {
+  background: var(--status-cancel-bg);
+  color: var(--status-cancel-text);
+  border: 1px solid var(--card-border);
+}
+
+body :is(.btn, .portal-module-card, .calendar-day-cell):hover {
+  transform: none;
+}
+
+body .badge-status {
+  border-color: var(--card-border);
+  font-weight: 600;
+  letter-spacing: normal;
+}
+
+body .stat-card-box {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+}
+
+body .stat-card-number {
+  color: var(--primary-red);
+  font-variant-numeric: tabular-nums;
+}
+
+body .stat-card-box > span:first-child {
+  color: var(--text-muted) !important;
+  font-weight: 500 !important;
+  letter-spacing: normal !important;
+  text-transform: none !important;
+}
+
+body .tab-nav-btn {
+  font-weight: 600;
+  box-shadow: none;
+}
+
+/* Status selection keeps its existing logic and labels, with brand colors. */
+body .corporate-status-option {
+  background: var(--input-bg) !important;
+  border-color: var(--input-border) !important;
+  color: var(--text-main) !important;
+}
+
+body .corporate-status-option.is-selected {
+  background: var(--card-bg) !important;
+  border-color: var(--primary-red) !important;
+  color: var(--primary-red) !important;
+}
+
+body .corporate-stat-card > div:nth-child(2) {
+  color: var(--primary-red);
+  font-variant-numeric: tabular-nums;
+}
+
+body .corporate-login-screen {
+  padding: 1.5rem;
+  background: var(--bg-color);
+}
+
+body .corporate-login-screen .lucide-sparkles {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  body .corporate-login-card {
+    padding: 2rem 1.5rem !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

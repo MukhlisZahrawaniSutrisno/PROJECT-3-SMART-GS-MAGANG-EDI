@@ -29,7 +29,7 @@ export default function RoomCatalog({
                 Katalog Fasilitas Ruang Rapat TLT
               </h2>
               {isAdmin && (
-                <span style={{ fontSize: '0.75rem', padding: '0.25rem 0.65rem', borderRadius: '6px', background: 'rgba(34, 197, 94, 0.15)', color: '#16a34a', fontWeight: 700, border: '1px solid rgba(34, 197, 94, 0.35)' }}>
+                <span style={{ fontSize: '0.75rem', padding: '0.25rem 0.65rem', borderRadius: '6px', background: 'var(--input-bg)', color: 'var(--text-main)', fontWeight: 700, border: '1px solid var(--card-border)' }}>
                   Mode Pengelolaan Admin GS
                 </span>
               )}
@@ -44,7 +44,7 @@ export default function RoomCatalog({
               <button
                 onClick={onOpenAddRoomModal}
                 className="btn btn-primary"
-                style={{ fontSize: '0.875rem', padding: '0.6rem 1.15rem', fontWeight: 800, background: 'linear-gradient(135deg, #16a34a 0%, #15803d 100%)', boxShadow: '0 4px 14px rgba(22, 163, 74, 0.35)' }}
+                style={{ fontSize: '0.875rem', padding: '0.6rem 1.15rem', fontWeight: 800, background: 'var(--primary-red)', boxShadow: '0 1px 3px rgba(0, 0, 0, 0.05)' }}
               >
                 <PlusCircle size={16} /> Tambah Ruangan Baru
               </button>
@@ -58,9 +58,9 @@ export default function RoomCatalog({
                   fontSize: '0.9375rem', 
                   padding: '0.65rem 1.35rem',
                   fontWeight: 800,
-                  borderRadius: '12px',
+                  borderRadius: '8px',
                   background: 'var(--primary-red)',
-                  boxShadow: '0 4px 14px rgba(224, 0, 0, 0.35)',
+                  boxShadow: '0 1px 3px rgba(0, 0, 0, 0.05)',
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: '0.5rem',
@@ -80,7 +80,7 @@ export default function RoomCatalog({
             alignItems: 'center',
             background: 'var(--input-bg)',
             padding: '0.4rem',
-            borderRadius: '14px',
+            borderRadius: '8px',
             border: '1.5px solid var(--card-border)',
             gap: '0.4rem',
             width: 'fit-content',
@@ -94,15 +94,15 @@ export default function RoomCatalog({
                 alignItems: 'center',
                 gap: '0.5rem',
                 padding: '0.55rem 1.1rem',
-                borderRadius: '10px',
+                borderRadius: '8px',
                 border: 'none',
                 background: activeTab === 'monitoring' ? 'var(--primary-red)' : 'transparent',
-                color: activeTab === 'monitoring' ? '#ffffff' : 'var(--text-title)',
+                color: activeTab === 'monitoring' ? '#FFFFFF' : 'var(--text-title)',
                 fontSize: '0.875rem',
                 fontWeight: activeTab === 'monitoring' ? 800 : 700,
                 cursor: 'pointer',
                 transition: 'all 0.2s ease',
-                boxShadow: activeTab === 'monitoring' ? '0 2px 10px rgba(224, 0, 0, 0.35)' : 'none'
+                boxShadow: activeTab === 'monitoring' ? '0 1px 3px rgba(0, 0, 0, 0.05)' : 'none'
               }}
             >
               <Calendar size={16} />
@@ -117,15 +117,15 @@ export default function RoomCatalog({
                 alignItems: 'center',
                 gap: '0.5rem',
                 padding: '0.55rem 1.1rem',
-                borderRadius: '10px',
+                borderRadius: '8px',
                 border: 'none',
                 background: activeTab === 'catalog' ? 'var(--primary-red)' : 'transparent',
-                color: activeTab === 'catalog' ? '#ffffff' : 'var(--text-title)',
+                color: activeTab === 'catalog' ? '#FFFFFF' : 'var(--text-title)',
                 fontSize: '0.875rem',
                 fontWeight: activeTab === 'catalog' ? 800 : 700,
                 cursor: 'pointer',
                 transition: 'all 0.2s ease',
-                boxShadow: activeTab === 'catalog' ? '0 2px 10px rgba(224, 0, 0, 0.35)' : 'none'
+                boxShadow: activeTab === 'catalog' ? '0 1px 3px rgba(0, 0, 0, 0.05)' : 'none'
               }}
             >
               <Building2 size={16} />
@@ -140,15 +140,15 @@ export default function RoomCatalog({
                 alignItems: 'center',
                 gap: '0.5rem',
                 padding: '0.55rem 1.1rem',
-                borderRadius: '10px',
+                borderRadius: '8px',
                 border: 'none',
                 background: activeTab === 'analytics' ? 'var(--primary-red)' : 'transparent',
-                color: activeTab === 'analytics' ? '#ffffff' : 'var(--text-title)',
+                color: activeTab === 'analytics' ? '#FFFFFF' : 'var(--text-title)',
                 fontSize: '0.875rem',
                 fontWeight: activeTab === 'analytics' ? 800 : 700,
                 cursor: 'pointer',
                 transition: 'all 0.2s ease',
-                boxShadow: activeTab === 'analytics' ? '0 2px 10px rgba(224, 0, 0, 0.35)' : 'none'
+                boxShadow: activeTab === 'analytics' ? '0 1px 3px rgba(0, 0, 0, 0.05)' : 'none'
               }}
             >
               <BarChart2 size={16} />
@@ -158,7 +158,7 @@ export default function RoomCatalog({
         )}
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
-          <div style={{ display: 'flex', gap: '0.5rem', background: 'var(--input-bg)', padding: '0.4rem', borderRadius: '10px', border: '1.5px solid var(--input-border)' }}>
+          <div style={{ display: 'flex', gap: '0.5rem', background: 'var(--input-bg)', padding: '0.4rem', borderRadius: '8px', border: '1.5px solid var(--input-border)' }}>
             {['ALL', '9', '11', '12'].map(fl => (
               <button
                 key={fl}
@@ -168,7 +168,7 @@ export default function RoomCatalog({
                   borderRadius: '7px',
                   border: 'none',
                   background: selectedFloor === fl ? 'var(--primary-red)' : 'transparent',
-                  color: selectedFloor === fl ? '#ffffff' : 'var(--text-title)',
+                  color: selectedFloor === fl ? '#FFFFFF' : 'var(--text-title)',
                   fontSize: '0.875rem',
                   fontWeight: selectedFloor === fl ? 800 : 600,
                   cursor: 'pointer',
@@ -200,7 +200,7 @@ export default function RoomCatalog({
             <button
               onClick={onOpenAddRoomModal}
               className="btn btn-primary"
-              style={{ marginTop: '0.5rem', background: 'linear-gradient(135deg, #16a34a 0%, #15803d 100%)' }}
+              style={{ marginTop: '0.5rem', background: 'var(--primary-red)' }}
             >
               <PlusCircle size={16} /> Tambah Ruangan Baru
             </button>
@@ -217,10 +217,10 @@ export default function RoomCatalog({
                   alt={room.name}
                   style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.3s ease' }}
                 />
-                <div style={{ position: 'absolute', top: '12px', left: '12px', background: 'rgba(0, 0, 0, 0.7)', backdropFilter: 'blur(4px)', padding: '0.35rem 0.75rem', borderRadius: '6px', fontSize: '0.75rem', fontWeight: 700, color: '#fff', border: '1px solid rgba(255, 255, 255, 0.15)' }}>
+                <div style={{ position: 'absolute', top: '12px', left: '12px', background: 'rgba(0, 0, 0, 0.7)', backdropFilter: 'none', padding: '0.35rem 0.75rem', borderRadius: '6px', fontSize: '0.75rem', fontWeight: 700, color: '#FFFFFF', border: '1px solid var(--card-border)' }}>
                   Lantai {room.floor}
                 </div>
-                <div style={{ position: 'absolute', bottom: '12px', right: '12px', background: 'rgba(224, 0, 0, 0.85)', backdropFilter: 'blur(4px)', padding: '0.35rem 0.75rem', borderRadius: '6px', fontSize: '0.75rem', fontWeight: 700, color: '#fff', display: 'flex', alignItems: 'center', gap: '0.375rem' }}>
+                <div style={{ position: 'absolute', bottom: '12px', right: '12px', background: 'var(--input-bg)', backdropFilter: 'none', padding: '0.35rem 0.75rem', borderRadius: '6px', fontSize: '0.75rem', fontWeight: 700, color: 'var(--text-main)', display: 'flex', alignItems: 'center', gap: '0.375rem' }}>
                   <Users size={14} /> Kapasitas: {room.capacity} Orang
                 </div>
               </div>
@@ -289,7 +289,7 @@ export default function RoomCatalog({
                 <button
                   onClick={() => onSelectRoomForBooking(room.name)}
                   className="btn btn-primary"
-                  style={{ width: '100%', fontSize: '0.875rem', background: 'linear-gradient(135deg, var(--primary-red) 0%, #b30000 100%)' }}
+                  style={{ width: '100%', fontSize: '0.875rem', background: 'var(--primary-red)' }}
                 >
                   <Calendar size={16} /> Ajukan Peminjaman Ruangan Ini
                 </button>

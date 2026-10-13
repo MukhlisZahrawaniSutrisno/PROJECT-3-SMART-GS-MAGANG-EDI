@@ -79,7 +79,7 @@ export default function ExportExcelModal({ isOpen, onClose, letters }) {
         {/* Header Modal */}
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.25rem', paddingBottom: '0.875rem', borderBottom: '1px solid var(--card-border)' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.625rem' }}>
-            <div style={{ padding: '0.5rem', background: 'rgba(22, 163, 74, 0.12)', color: '#16a34a', borderRadius: '10px' }}>
+            <div style={{ padding: '0.5rem', background: 'var(--input-bg)', color: 'var(--text-main)', borderRadius: '8px' }}>
               <FileSpreadsheet size={22} />
             </div>
             <div>
@@ -147,7 +147,7 @@ export default function ExportExcelModal({ isOpen, onClose, letters }) {
 
           {/* Custom Date Range Inputs */}
           {filterType === 'CUSTOM' && (
-            <div style={{ background: 'var(--input-bg)', padding: '1rem', borderRadius: '12px', border: '1px solid var(--card-border)', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
+            <div style={{ background: 'var(--input-bg)', padding: '1rem', borderRadius: '8px', border: '1px solid var(--card-border)', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
               <div className="form-group" style={{ margin: 0 }}>
                 <label className="form-label" style={{ fontSize: '0.75rem' }}>Dari Tanggal:</label>
                 <input
@@ -177,7 +177,7 @@ export default function ExportExcelModal({ isOpen, onClose, letters }) {
             <button type="button" className="btn btn-secondary" onClick={onClose}>
               Batal
             </button>
-            <button type="submit" className="btn" style={{ background: '#16a34a', color: '#fff', border: 'none', fontWeight: 800 }}>
+            <button type="submit" className="btn" style={{ background: 'var(--primary-red)', color: '#FFFFFF', border: 'none', fontWeight: 800 }}>
               <Download size={16} /> Unduh Excel (.xlsx)
             </button>
           </div>

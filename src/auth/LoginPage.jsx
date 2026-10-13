@@ -34,7 +34,7 @@ export default function LoginPage({ theme, toggleTheme }) {
           style={{
             background: 'var(--card-bg)',
             border: '1px solid var(--card-border)',
-            boxShadow: '0 2px 8px rgba(0,0,0,0.06)'
+            boxShadow: 'var(--card-shadow)'
           }}
         >
           {theme === 'light' ? <Moon size={18} /> : <Sun size={18} color="#facc15" />}
@@ -53,7 +53,7 @@ export default function LoginPage({ theme, toggleTheme }) {
           />
           <h1 style={{
             fontSize: '1.65rem',
-            fontWeight: 800,
+            fontWeight: 700,
             color: 'var(--text-title)',
             letterSpacing: '-0.025em',
             margin: '0 0 0.45rem 0'

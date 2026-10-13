@@ -270,7 +270,7 @@ export default function AddRoomModal({ isOpen, onClose, onAddRoom, onSaveRoom, o
               </label>
               
               {formData.image ? (
-                <div style={{ position: 'relative', width: '100%', height: '190px', borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--card-border)', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }}>
+                <div style={{ position: 'relative', width: '100%', height: '190px', borderRadius: '8px', overflow: 'hidden', border: '1px solid var(--card-border)', boxShadow: '0 1px 3px rgba(0, 0, 0, 0.05)' }}>
                   <img 
                     src={formData.image} 
                     alt="Foto Ruangan Rapat" 
@@ -285,9 +285,9 @@ export default function AddRoomModal({ isOpen, onClose, onAddRoom, onSaveRoom, o
                         padding: '0.4rem 0.75rem', 
                         fontSize: '0.75rem', 
                         background: 'rgba(0, 0, 0, 0.75)', 
-                        backdropFilter: 'blur(6px)', 
-                        color: '#ffffff',
-                        border: '1px solid rgba(255, 255, 255, 0.2)',
+                        backdropFilter: 'none',
+                        color: '#FFFFFF',
+                        border: '1px solid var(--card-border)',
                         gap: '0.35rem'
                       }}
                     >
@@ -300,17 +300,17 @@ export default function AddRoomModal({ isOpen, onClose, onAddRoom, onSaveRoom, o
                       style={{ 
                         padding: '0.4rem 0.75rem', 
                         fontSize: '0.75rem', 
-                        background: 'rgba(239, 68, 68, 0.85)', 
-                        backdropFilter: 'blur(6px)', 
-                        color: '#ffffff',
-                        border: '1px solid rgba(255, 255, 255, 0.2)',
+                        background: 'var(--input-bg)',
+                        backdropFilter: 'none',
+                        color: 'var(--text-main)',
+                        border: '1px solid var(--card-border)',
                         gap: '0.35rem'
                       }}
                     >
                       <RefreshCw size={13} /> Ganti Foto
                     </button>
                   </div>
-                  <div style={{ position: 'absolute', bottom: '10px', left: '10px', background: 'rgba(22, 163, 74, 0.85)', backdropFilter: 'blur(4px)', color: '#ffffff', padding: '0.25rem 0.65rem', borderRadius: '6px', fontSize: '0.75rem', fontWeight: 700 }}>
+                  <div style={{ position: 'absolute', bottom: '10px', left: '10px', background: 'var(--input-bg)', backdropFilter: 'none', color: 'var(--text-main)', padding: '0.25rem 0.65rem', borderRadius: '6px', fontSize: '0.75rem', fontWeight: 700 }}>
                     ✓ Foto Terpasang
                   </div>
                 </div>
@@ -325,9 +325,9 @@ export default function AddRoomModal({ isOpen, onClose, onAddRoom, onSaveRoom, o
                     alignItems: 'center',
                     justify: 'center',
                     padding: '1.75rem 1rem',
-                    border: isDragging ? '2px dashed #16a34a' : '2px dashed var(--input-border)',
-                    borderRadius: '12px',
-                    background: isDragging ? 'rgba(34, 197, 94, 0.1)' : 'var(--input-bg)',
+                    border: isDragging ? '2px dashed var(--card-border)' : '2px dashed var(--input-border)',
+                    borderRadius: '8px',
+                    background: isDragging ? 'var(--input-bg)' : 'var(--input-bg)',
                     cursor: isUploading ? 'not-allowed' : 'pointer',
                     transition: 'all 0.2s ease',
                     textAlign: 'center',
@@ -343,7 +343,7 @@ export default function AddRoomModal({ isOpen, onClose, onAddRoom, onSaveRoom, o
                   />
                   
                   {isUploading ? (
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#0284c7' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--text-main)' }}>
                       <Loader2 size={22} className="spin-icon" style={{ animation: 'spin 1s linear infinite' }} />
                       <span style={{ fontSize: '0.875rem', fontWeight: 600 }}>Memproses & Mengunggah Foto...</span>
                     </div>

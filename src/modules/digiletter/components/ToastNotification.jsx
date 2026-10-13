@@ -24,16 +24,16 @@ export default function ToastNotification({ toast, onClose }) {
       minWidth: '300px',
       maxWidth: '420px',
       background: 'var(--card-bg)',
-      border: `1px solid ${isSuccess ? 'rgba(34, 197, 94, 0.3)' : 'rgba(239, 68, 68, 0.3)'}`,
-      boxShadow: 'var(--card-shadow)',
-      borderRadius: '12px',
+      border: `1px solid ${isSuccess ? 'var(--card-border)' : 'var(--card-border)'}`,
+      boxShadow: '0 1px 3px rgba(0, 0, 0, 0.05)',
+      borderRadius: '8px',
       padding: '0.875rem 1rem',
       display: 'flex',
       alignItems: 'flex-start',
       gap: '0.75rem',
       animation: 'slideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1)'
     }}>
-      <div style={{ color: isSuccess ? '#16a34a' : '#ef4444', flexShrink: 0, marginTop: '2px' }}>
+      <div style={{ color: isSuccess ? 'var(--text-main)' : 'var(--primary-red)', flexShrink: 0, marginTop: '2px' }}>
         {isSuccess ? <CheckCircle2 size={20} /> : <AlertCircle size={20} />}
       </div>
       <div style={{ flex: 1 }}>

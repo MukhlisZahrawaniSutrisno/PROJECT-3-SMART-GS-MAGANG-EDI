@@ -221,7 +221,7 @@ export default function PublicMonitoring({
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.35rem' }}>
             {hasUploadedNota ? (
               <>
-                <span className="badge-status disetujui" style={{ background: 'rgba(16, 185, 129, 0.15)', color: '#059669', border: '1px solid rgba(16, 185, 129, 0.3)', gap: '0.3rem' }}>
+                <span className="badge-status disetujui" style={{ background: 'var(--input-bg)', color: 'var(--text-main)', border: '1px solid var(--card-border)', gap: '0.3rem' }}>
                   <CheckCircle2 size={13} /> Nota Dinas Terunggah
                 </span>
                 <span style={{ fontSize: '0.675rem', color: 'var(--text-muted)', fontStyle: 'italic', textAlign: 'center' }}>
@@ -232,7 +232,7 @@ export default function PublicMonitoring({
                   style={{
                     fontSize: '0.675rem',
                     fontWeight: 600,
-                    color: '#0284c7',
+                    color: 'var(--text-main)',
                     cursor: isUploadingThis ? 'not-allowed' : 'pointer',
                     display: 'inline-flex',
                     alignItems: 'center',
@@ -263,9 +263,9 @@ export default function PublicMonitoring({
                   style={{
                     fontSize: '0.725rem',
                     fontWeight: 700,
-                    color: '#0284c7',
+                    color: 'var(--text-main)',
                     background: 'var(--input-bg)',
-                    border: '1px dotted #0284c7',
+                    border: '1px dotted var(--card-border)',
                     padding: '0.22rem 0.65rem',
                     borderRadius: '6px',
                     cursor: isUploadingThis ? 'not-allowed' : 'pointer',
@@ -335,9 +335,9 @@ export default function PublicMonitoring({
                 fontSize: '0.9375rem', 
                 padding: '0.65rem 1.35rem',
                 fontWeight: 800,
-                borderRadius: '12px',
+                borderRadius: '8px',
                 background: 'var(--primary-red)',
-                boxShadow: '0 4px 14px rgba(224, 0, 0, 0.35)',
+                boxShadow: '0 1px 3px rgba(0, 0, 0, 0.05)',
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '0.5rem',
@@ -356,7 +356,7 @@ export default function PublicMonitoring({
             alignItems: 'center',
             background: 'var(--input-bg)',
             padding: '0.4rem',
-            borderRadius: '14px',
+            borderRadius: '8px',
             border: '1.5px solid var(--card-border)',
             gap: '0.4rem',
             width: 'fit-content',
@@ -370,15 +370,15 @@ export default function PublicMonitoring({
                 alignItems: 'center',
                 gap: '0.5rem',
                 padding: '0.55rem 1.1rem',
-                borderRadius: '10px',
+                borderRadius: '8px',
                 border: 'none',
                 background: activeTab === 'monitoring' ? 'var(--primary-red)' : 'transparent',
-                color: activeTab === 'monitoring' ? '#ffffff' : 'var(--text-title)',
+                color: activeTab === 'monitoring' ? '#FFFFFF' : 'var(--text-title)',
                 fontSize: '0.875rem',
                 fontWeight: activeTab === 'monitoring' ? 800 : 700,
                 cursor: 'pointer',
                 transition: 'all 0.2s ease',
-                boxShadow: activeTab === 'monitoring' ? '0 2px 10px rgba(224, 0, 0, 0.35)' : 'none'
+                boxShadow: activeTab === 'monitoring' ? '0 1px 3px rgba(0, 0, 0, 0.05)' : 'none'
               }}
             >
               <Calendar size={16} />
@@ -393,15 +393,15 @@ export default function PublicMonitoring({
                 alignItems: 'center',
                 gap: '0.5rem',
                 padding: '0.55rem 1.1rem',
-                borderRadius: '10px',
+                borderRadius: '8px',
                 border: 'none',
                 background: activeTab === 'catalog' ? 'var(--primary-red)' : 'transparent',
-                color: activeTab === 'catalog' ? '#ffffff' : 'var(--text-title)',
+                color: activeTab === 'catalog' ? '#FFFFFF' : 'var(--text-title)',
                 fontSize: '0.875rem',
                 fontWeight: activeTab === 'catalog' ? 800 : 700,
                 cursor: 'pointer',
                 transition: 'all 0.2s ease',
-                boxShadow: activeTab === 'catalog' ? '0 2px 10px rgba(224, 0, 0, 0.35)' : 'none'
+                boxShadow: activeTab === 'catalog' ? '0 1px 3px rgba(0, 0, 0, 0.05)' : 'none'
               }}
             >
               <Building2 size={16} />
@@ -416,15 +416,15 @@ export default function PublicMonitoring({
                 alignItems: 'center',
                 gap: '0.5rem',
                 padding: '0.55rem 1.1rem',
-                borderRadius: '10px',
+                borderRadius: '8px',
                 border: 'none',
                 background: activeTab === 'analytics' ? 'var(--primary-red)' : 'transparent',
-                color: activeTab === 'analytics' ? '#ffffff' : 'var(--text-title)',
+                color: activeTab === 'analytics' ? '#FFFFFF' : 'var(--text-title)',
                 fontSize: '0.875rem',
                 fontWeight: activeTab === 'analytics' ? 800 : 700,
                 cursor: 'pointer',
                 transition: 'all 0.2s ease',
-                boxShadow: activeTab === 'analytics' ? '0 2px 10px rgba(224, 0, 0, 0.35)' : 'none'
+                boxShadow: activeTab === 'analytics' ? '0 1px 3px rgba(0, 0, 0, 0.05)' : 'none'
               }}
             >
               <BarChart2 size={16} />
@@ -434,35 +434,35 @@ export default function PublicMonitoring({
         )}
 
         <div className="stat-grid-bar" style={{ display: 'flex', gap: '0.875rem', flexWrap: 'wrap' }}>
-          <div className="stat-card-box" style={{ background: 'var(--input-bg)', border: '1px solid var(--card-border)', padding: '0.75rem 1.25rem', borderRadius: '12px', textAlign: 'center', minWidth: '120px' }}>
+          <div className="stat-card-box" style={{ background: 'var(--card-bg)', border: '1px solid var(--card-border)', padding: '0.75rem 1.25rem', borderRadius: '8px', textAlign: 'center', minWidth: '120px' }}>
             <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', display: 'block', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em' }}>Total Peminjaman</span>
-            <span className="stat-card-number" style={{ fontSize: '1.45rem', fontWeight: 800, color: 'var(--text-title)' }}>{bookings.length}</span>
+            <span className="stat-card-number" style={{ fontSize: '1.45rem', fontWeight: 800, color: 'var(--primary-red)' }}>{bookings.length}</span>
           </div>
 
-          <div className="stat-card-box" style={{ background: 'var(--status-pending-bg)', border: '1px solid rgba(234, 179, 8, 0.4)', padding: '0.75rem 1.25rem', borderRadius: '12px', textAlign: 'center', minWidth: '140px' }}>
-            <span style={{ fontSize: '0.75rem', color: 'var(--status-pending-text)', display: 'block', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em' }}>Menunggu Persetujuan</span>
-            <span className="stat-card-number" style={{ fontSize: '1.45rem', fontWeight: 800, color: 'var(--status-pending-text)' }}>
+          <div className="stat-card-box" style={{ background: 'var(--card-bg)', border: '1px solid var(--card-border)', padding: '0.75rem 1.25rem', borderRadius: '8px', textAlign: 'center', minWidth: '140px' }}>
+            <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', display: 'block', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em' }}>Menunggu Persetujuan</span>
+            <span className="stat-card-number" style={{ fontSize: '1.45rem', fontWeight: 800, color: 'var(--primary-red)' }}>
               {bookings.filter(b => getNormalizedStatus(b.status) === 'Menunggu Persetujuan').length}
             </span>
           </div>
 
-          <div className="stat-card-box" style={{ background: 'var(--status-nota-bg)', border: '1px solid rgba(14, 165, 233, 0.45)', padding: '0.75rem 1.25rem', borderRadius: '12px', textAlign: 'center', minWidth: '130px' }}>
-            <span style={{ fontSize: '0.75rem', color: 'var(--status-nota-text)', display: 'block', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em' }}>Unggah Nota Dinas</span>
-            <span className="stat-card-number" style={{ fontSize: '1.45rem', fontWeight: 800, color: 'var(--status-nota-text)' }}>
+          <div className="stat-card-box" style={{ background: 'var(--card-bg)', border: '1px solid var(--card-border)', padding: '0.75rem 1.25rem', borderRadius: '8px', textAlign: 'center', minWidth: '130px' }}>
+            <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', display: 'block', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em' }}>Unggah Nota Dinas</span>
+            <span className="stat-card-number" style={{ fontSize: '1.45rem', fontWeight: 800, color: 'var(--primary-red)' }}>
               {bookings.filter(b => getNormalizedStatus(b.status) === 'Unggah Nota Dinas').length}
             </span>
           </div>
 
-          <div className="stat-card-box" style={{ background: 'var(--status-approved-bg)', border: '1px solid rgba(34, 197, 94, 0.45)', padding: '0.75rem 1.25rem', borderRadius: '12px', textAlign: 'center', minWidth: '130px' }}>
-            <span style={{ fontSize: '0.75rem', color: 'var(--status-approved-text)', display: 'block', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em' }}>Disetujui (Resmi)</span>
-            <span className="stat-card-number" style={{ fontSize: '1.45rem', fontWeight: 800, color: 'var(--status-approved-text)' }}>
+          <div className="stat-card-box" style={{ background: 'var(--card-bg)', border: '1px solid var(--card-border)', padding: '0.75rem 1.25rem', borderRadius: '8px', textAlign: 'center', minWidth: '130px' }}>
+            <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', display: 'block', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em' }}>Disetujui (Resmi)</span>
+            <span className="stat-card-number" style={{ fontSize: '1.45rem', fontWeight: 800, color: 'var(--primary-red)' }}>
               {bookings.filter(b => getNormalizedStatus(b.status) === 'Disetujui').length}
             </span>
           </div>
 
-          <div className="stat-card-box" style={{ background: 'var(--status-done-bg)', border: '1px solid rgba(22, 163, 74, 0.4)', padding: '0.75rem 1.25rem', borderRadius: '12px', textAlign: 'center', minWidth: '120px' }}>
-            <span style={{ fontSize: '0.75rem', color: 'var(--status-done-text)', display: 'block', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em' }}>Agenda Selesai</span>
-            <span className="stat-card-number" style={{ fontSize: '1.45rem', fontWeight: 800, color: 'var(--status-done-text)' }}>
+          <div className="stat-card-box" style={{ background: 'var(--card-bg)', border: '1px solid var(--card-border)', padding: '0.75rem 1.25rem', borderRadius: '8px', textAlign: 'center', minWidth: '120px' }}>
+            <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', display: 'block', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em' }}>Agenda Selesai</span>
+            <span className="stat-card-number" style={{ fontSize: '1.45rem', fontWeight: 800, color: 'var(--primary-red)' }}>
               {bookings.filter(b => getNormalizedStatus(b.status) === 'Selesai').length}
             </span>
           </div>
@@ -509,7 +509,7 @@ export default function PublicMonitoring({
                 borderRadius: '6px',
                 border: 'none',
                 background: selectedFloor === fl ? 'var(--primary-red)' : 'transparent',
-                color: selectedFloor === fl ? '#ffffff' : 'var(--text-main)',
+                color: selectedFloor === fl ? '#FFFFFF' : 'var(--text-main)',
                 fontSize: '0.8125rem',
                 fontWeight: selectedFloor === fl ? 700 : 500,
                 cursor: 'pointer'
@@ -570,20 +570,20 @@ export default function PublicMonitoring({
         {isAdmin && (
           <button 
             onClick={handleOpenRecapModal}
-            className="btn"
+            className="btn btn-secondary"
             style={{
               padding: '0.45rem 0.85rem',
               fontSize: '0.8125rem',
               fontWeight: 700,
-              background: 'linear-gradient(135deg, #0284c7 0%, #0369a1 100%)',
-              color: '#ffffff',
+              background: 'var(--btn-secondary-bg)',
+              color: 'var(--btn-secondary-text)',
               border: 'none',
               borderRadius: '8px',
               cursor: 'pointer',
               display: 'flex',
               alignItems: 'center',
               gap: '0.4rem',
-              boxShadow: '0 2px 8px rgba(2, 132, 199, 0.25)',
+              boxShadow: '0 1px 3px rgba(0, 0, 0, 0.05)',
               marginLeft: 'auto'
             }}
             title="Khusus Admin: Rekap & Salin Data Peminjaman Ruangan Berdasarkan Rentang Tanggal"
@@ -667,7 +667,7 @@ export default function PublicMonitoring({
                             target="_blank" 
                             rel="noopener noreferrer"
                             onClick={(e) => handleViewNotaDinas(item.nota_dinas_url, item.nota_dinas_name, e)}
-                            style={{ fontSize: '0.7rem', color: '#0284c7', textDecoration: 'none', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '0.25rem', background: 'var(--input-bg)', padding: '0.2rem 0.55rem', borderRadius: '4px', border: '1px solid var(--input-border)', cursor: 'pointer' }}
+                            style={{ fontSize: '0.7rem', color: 'var(--text-main)', textDecoration: 'none', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '0.25rem', background: 'var(--input-bg)', padding: '0.2rem 0.55rem', borderRadius: '4px', border: '1px solid var(--input-border)', cursor: 'pointer' }}
                             title="Lihat Pratinjau / Unduh Berkas Nota Dinas"
                           >
                             <Eye size={12} /> Lihat Nota Dinas
@@ -679,15 +679,15 @@ export default function PublicMonitoring({
                         <div style={{ marginTop: '0.4rem' }}>
                           <span style={{ 
                             fontSize: '0.7rem', 
-                            color: '#059669', 
+                            color: 'var(--text-main)',
                             fontWeight: 600, 
                             display: 'inline-flex', 
                             alignItems: 'center', 
                             gap: '0.25rem', 
-                            background: 'rgba(16, 185, 129, 0.1)', 
+                            background: 'var(--input-bg)',
                             padding: '0.2rem 0.55rem', 
                             borderRadius: '4px', 
-                            border: '1px solid rgba(16, 185, 129, 0.25)' 
+                            border: '1px solid var(--card-border)'
                           }}>
                             <CheckCircle2 size={12} /> Berkas Nota Dinas Terunggah
                           </span>
@@ -695,7 +695,7 @@ export default function PublicMonitoring({
                       )}
                     </td>
                     <td style={{ padding: '0.75rem 0.65rem' }}>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.375rem', fontSize: '0.775rem', color: item.pemberi_izin !== '-' ? 'var(--status-approved-text)' : 'var(--text-muted)' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.375rem', fontSize: '0.775rem', color: item.pemberi_izin !== '-' ? 'var(--text-muted)' : 'var(--text-muted)' }}>
                         <UserCheck size={13} />
                         {item.pemberi_izin}
                       </div>
@@ -767,7 +767,7 @@ export default function PublicMonitoring({
         <div className="modal-overlay" style={{ zIndex: 1300 }} onClick={() => setPreviewImageModal({ isOpen: false, url: '', name: '' })}>
           <div 
             className="modal-container glass-card" 
-            style={{ maxWidth: '850px', width: '94%', padding: '1.25rem', borderRadius: '16px' }}
+            style={{ maxWidth: '850px', width: '94%', padding: '1.25rem', borderRadius: '8px' }}
             onClick={(e) => e.stopPropagation()}
           >
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem', borderBottom: '1px solid var(--card-border)', paddingBottom: '0.75rem' }}>
@@ -797,12 +797,12 @@ export default function PublicMonitoring({
               </div>
             </div>
 
-            <div style={{ textAlign: 'center', background: 'rgba(0, 0, 0, 0.05)', padding: '0.75rem', borderRadius: '12px', maxHeight: '78vh', minHeight: '300px', display: 'flex', justifyContent: 'center', alignItems: 'center', overflow: 'hidden' }}>
+            <div style={{ textAlign: 'center', background: 'var(--input-bg)', padding: '0.75rem', borderRadius: '8px', maxHeight: '78vh', minHeight: '300px', display: 'flex', justifyContent: 'center', alignItems: 'center', overflow: 'hidden' }}>
               {isImageFile(previewImageModal.url, previewImageModal.name) ? (
                 <img 
                   src={previewImageModal.url} 
                   alt="Pratinjau Nota Dinas" 
-                  style={{ maxWidth: '100%', maxHeight: '70vh', objectFit: 'contain', borderRadius: '8px', boxShadow: '0 4px 20px rgba(0,0,0,0.15)' }} 
+                  style={{ maxWidth: '100%', maxHeight: '70vh', objectFit: 'contain', borderRadius: '8px', boxShadow: '0 1px 3px rgba(0, 0, 0, 0.05)' }}
                   onError={(e) => {
                     e.target.style.display = 'none';
                     const parent = e.target.parentElement;
@@ -833,7 +833,7 @@ export default function PublicMonitoring({
         <div className="modal-overlay" style={{ zIndex: 1300 }} onClick={() => setIsRecapModalOpen(false)}>
           <div 
             className="modal-container glass-card" 
-            style={{ maxWidth: '650px', width: '94%', padding: '1.5rem', borderRadius: '16px' }}
+            style={{ maxWidth: '650px', width: '94%', padding: '1.5rem', borderRadius: '8px' }}
             onClick={(e) => e.stopPropagation()}
           >
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem', borderBottom: '1px solid var(--card-border)', paddingBottom: '0.75rem' }}>
@@ -895,7 +895,7 @@ export default function PublicMonitoring({
               </div>
 
               {/* Input Rentang Tanggal */}
-              <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', alignItems: 'center', background: 'var(--input-bg)', padding: '0.75rem', borderRadius: '10px', border: '1px solid var(--input-border)' }}>
+              <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', alignItems: 'center', background: 'var(--input-bg)', padding: '0.75rem', borderRadius: '8px', border: '1px solid var(--input-border)' }}>
                 <div style={{ flex: 1, minWidth: '130px' }}>
                   <label style={{ fontSize: '0.725rem', fontWeight: 600, color: 'var(--text-muted)', display: 'block', marginBottom: '0.25rem' }}>
                     Tanggal Mulai:
@@ -946,7 +946,7 @@ export default function PublicMonitoring({
                 <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--text-title)' }}>
                   Pratinjau Hasil Rekap Teks:
                 </span>
-                <span style={{ fontSize: '0.725rem', fontWeight: 600, color: '#0284c7', background: 'rgba(2, 132, 199, 0.1)', padding: '0.15rem 0.5rem', borderRadius: '4px' }}>
+                <span style={{ fontSize: '0.725rem', fontWeight: 600, color: 'var(--text-main)', background: 'var(--input-bg)', padding: '0.15rem 0.5rem', borderRadius: '4px' }}>
                   {getFilteredRecapBookings().length} Agenda Ditemukan
                 </span>
               </div>
@@ -958,12 +958,12 @@ export default function PublicMonitoring({
                   width: '100%',
                   height: '210px',
                   padding: '0.75rem',
-                  fontFamily: 'monospace, monospace',
+                  fontFamily: 'Helvetica Neue, Arial, sans-serif',
                   fontSize: '0.775rem',
                   lineHeight: '1.45',
                   background: 'var(--input-bg)',
                   border: '1px solid var(--input-border)',
-                  borderRadius: '10px',
+                  borderRadius: '8px',
                   color: 'var(--text-main)',
                   resize: 'none',
                   outline: 'none',
@@ -990,10 +990,10 @@ export default function PublicMonitoring({
                 style={{
                   fontSize: '0.8125rem',
                   padding: '0.45rem 1.25rem',
-                  background: isCopied ? '#16a34a' : 'linear-gradient(135deg, #0284c7 0%, #0369a1 100%)',
+                  background: isCopied ? 'var(--primary-red)' : 'var(--primary-red)',
                   gap: '0.4rem',
                   transition: 'all 0.2s ease',
-                  boxShadow: isCopied ? '0 3px 10px rgba(22, 163, 74, 0.3)' : '0 3px 10px rgba(2, 132, 199, 0.3)'
+                  boxShadow: isCopied ? '0 1px 3px rgba(0, 0, 0, 0.05)' : '0 1px 3px rgba(0, 0, 0, 0.05)'
                 }}
               >
                 {isCopied ? (

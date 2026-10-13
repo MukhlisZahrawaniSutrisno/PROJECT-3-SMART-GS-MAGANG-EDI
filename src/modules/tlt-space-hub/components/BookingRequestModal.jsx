@@ -312,13 +312,13 @@ export default function BookingRequestModal({ isOpen, onClose, onSubmitBooking, 
 
             {/* Live Infobox Ketersediaan Jam Ruangan */}
             {selectedRoomApprovedBookings.length > 0 && (
-              <div style={{ marginTop: '0.4rem', fontSize: '0.75rem', color: '#b91c1c', background: 'rgba(224, 0, 0, 0.08)', border: '1px solid rgba(224, 0, 0, 0.25)', padding: '0.4rem 0.625rem', borderRadius: '6px' }}>
+              <div style={{ marginTop: '0.4rem', fontSize: '0.75rem', color: 'var(--text-main)', background: 'var(--input-bg)', border: '1px solid var(--card-border)', padding: '0.4rem 0.625rem', borderRadius: '6px' }}>
                 🔒 <strong>Jadwal yang telah disetujui pada tanggal ini:</strong> {selectedRoomApprovedBookings.map(b => b.pukul || `${b.pukul_mulai} - ${b.pukul_selesai}`).join(', ')}. Jam di luar jam tersebut <strong>TETAP BISA diajukan</strong>.
               </div>
             )}
 
             {selectedRoomPendingBookings.length > 0 && selectedRoomApprovedBookings.length === 0 && (
-              <div style={{ marginTop: '0.4rem', fontSize: '0.75rem', color: '#854d0e', background: 'rgba(234, 179, 8, 0.1)', border: '1px solid rgba(234, 179, 8, 0.25)', padding: '0.4rem 0.625rem', borderRadius: '6px' }}>
+              <div style={{ marginTop: '0.4rem', fontSize: '0.75rem', color: 'var(--text-main)', background: 'var(--input-bg)', border: '1px solid var(--card-border)', padding: '0.4rem 0.625rem', borderRadius: '6px' }}>
                 ⏳ <strong>Pengajuan Menunggu Persetujuan:</strong> {selectedRoomPendingBookings.map(b => b.pukul || `${b.pukul_mulai} - ${b.pukul_selesai}`).join(', ')}. Anda <strong>tetap bisa mengajukan</strong> peminjaman.
               </div>
             )}
@@ -520,9 +520,9 @@ export default function BookingRequestModal({ isOpen, onClose, onSubmitBooking, 
           {/* Banner Notifikasi Peringatan Bentrok Dipindah ke Bawah (Sebelum Tombol Kirim) */}
           {conflictError && (
             <div style={{
-              background: 'rgba(239, 68, 68, 0.12)',
-              border: '1px solid rgba(239, 68, 68, 0.35)',
-              borderRadius: '12px',
+              background: 'var(--input-bg)',
+              border: '1px solid var(--card-border)',
+              borderRadius: '8px',
               padding: '0.875rem 1rem',
               display: 'flex',
               gap: '0.75rem',
@@ -532,11 +532,11 @@ export default function BookingRequestModal({ isOpen, onClose, onSubmitBooking, 
               <AlertTriangle size={22} color="#dc2626" style={{ flexShrink: 0, marginTop: '2px' }} />
               <div style={{ flex: 1, fontSize: '0.8125rem', color: 'var(--text-main)' }}>
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.375rem', flexWrap: 'wrap', gap: '0.375rem' }}>
-                  <strong style={{ color: '#dc2626', fontSize: '0.875rem' }}>
+                  <strong style={{ color: 'var(--primary-red)', fontSize: '0.875rem' }}>
                     Peminjaman Ditolak Sistem - Jadwal Bentrok
                   </strong>
                   {conflictError.status && (
-                    <span style={{ fontSize: '0.6875rem', padding: '0.15rem 0.5rem', borderRadius: '4px', background: '#fef9c3', color: '#854d0e', fontWeight: 700, border: '1px solid rgba(234, 179, 8, 0.4)' }}>
+                    <span style={{ fontSize: '0.6875rem', padding: '0.15rem 0.5rem', borderRadius: '4px', background: 'var(--input-bg)', color: 'var(--text-main)', fontWeight: 700, border: '1px solid var(--card-border)' }}>
                       STATUS: {conflictError.status.toUpperCase()}
                     </span>
                   )}
@@ -558,7 +558,7 @@ export default function BookingRequestModal({ isOpen, onClose, onSubmitBooking, 
                     </div>
                   </div>
                 ) : (
-                  <p style={{ margin: 0, color: '#dc2626', fontWeight: 600 }}>{conflictError.message || conflictError}</p>
+                  <p style={{ margin: 0, color: 'var(--primary-red)', fontWeight: 600 }}>{conflictError.message || conflictError}</p>
                 )}
 
                 <p style={{ marginTop: '0.5rem', fontSize: '0.75rem', color: 'var(--text-muted)', fontStyle: 'italic', margin: '0.5rem 0 0 0' }}>
@@ -570,9 +570,9 @@ export default function BookingRequestModal({ isOpen, onClose, onSubmitBooking, 
 
           {/* Alert Peringatan Jadwal EVP */}
           <div style={{
-            background: 'rgba(234, 179, 8, 0.08)',
-            border: '1px solid rgba(234, 179, 8, 0.28)',
-            borderRadius: '10px',
+            background: 'var(--input-bg)',
+            border: '1px solid var(--card-border)',
+            borderRadius: '8px',
             padding: '0.625rem 0.875rem',
             display: 'flex',
             alignItems: 'center',
@@ -581,9 +581,9 @@ export default function BookingRequestModal({ isOpen, onClose, onSubmitBooking, 
             color: 'var(--text-main)',
             marginTop: '0.25rem'
           }}>
-            <AlertTriangle size={18} style={{ color: '#ca8a04', flexShrink: 0 }} />
+            <AlertTriangle size={18} style={{ color: 'var(--text-main)', flexShrink: 0 }} />
             <div>
-              <strong style={{ color: '#ca8a04' }}>Catatan Penting:</strong> Permohonan peminjaman ruangan ini bersifat sementara dan dapat disesuaikan atau diubah sewaktu-waktu mengikuti agenda kegiatan <strong>Executive Vice President</strong>.
+              <strong style={{ color: 'var(--text-main)' }}>Catatan Penting:</strong> Permohonan peminjaman ruangan ini bersifat sementara dan dapat disesuaikan atau diubah sewaktu-waktu mengikuti agenda kegiatan <strong>Executive Vice President</strong>.
             </div>
           </div>
 
@@ -600,8 +600,8 @@ export default function BookingRequestModal({ isOpen, onClose, onSubmitBooking, 
 
         {showCancelConfirm && (
           <div className="modal-overlay" style={{ zIndex: 1200 }}>
-            <div className="modal-container glass-card" style={{ maxWidth: '380px', width: '90%', padding: '1.25rem', borderRadius: '14px', textAlign: 'center' }}>
-              <div style={{ width: '48px', height: '48px', borderRadius: '50%', background: 'rgba(239, 68, 68, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 0.875rem auto' }}>
+            <div className="modal-container glass-card" style={{ maxWidth: '380px', width: '90%', padding: '1.25rem', borderRadius: '8px', textAlign: 'center' }}>
+              <div style={{ width: '48px', height: '48px', borderRadius: '50%', background: 'var(--input-bg)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 0.875rem auto' }}>
                 <AlertTriangle size={24} color="#dc2626" />
               </div>
               <h4 style={{ fontSize: '1.05rem', fontWeight: 700, color: 'var(--text-title)', marginBottom: '0.5rem' }}>
@@ -623,7 +623,7 @@ export default function BookingRequestModal({ isOpen, onClose, onSubmitBooking, 
                   type="button"
                   onClick={handleConfirmCancel}
                   className="btn btn-primary"
-                  style={{ flex: 1, fontSize: '0.8125rem', padding: '0.45rem', background: 'linear-gradient(135deg, #dc2626 0%, #b91c1c 100%)' }}
+                  style={{ flex: 1, fontSize: '0.8125rem', padding: '0.45rem', background: 'var(--primary-red)' }}
                 >
                   Ya, Batalkan
                 </button>

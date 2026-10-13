@@ -172,7 +172,7 @@ export default function AdminApprovalModal({ isOpen, onClose, booking, onSaveApp
                 const IconComp = st.icon;
                 const isSelected = formData.status === st.key;
                 return (
-                  <button
+                  <button className={isSelected ? 'corporate-status-option is-selected' : 'corporate-status-option'}
                     key={st.key}
                     type="button"
                     onClick={() => setFormData({ ...formData, status: st.key })}
@@ -200,7 +200,7 @@ export default function AdminApprovalModal({ isOpen, onClose, booking, onSaveApp
           </div>
 
           {/* Bagian Pengelolaan File Nota Dinas */}
-          <div style={{ background: 'var(--input-bg)', border: '1px solid var(--card-border)', borderRadius: '12px', padding: '1rem' }}>
+          <div style={{ background: 'var(--input-bg)', border: '1px solid var(--card-border)', borderRadius: '8px', padding: '1rem' }}>
             <label style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.8125rem', fontWeight: 700, color: 'var(--text-title)', marginBottom: '0.5rem' }}>
               <FileCheck size={16} color="#0284c7" /> Dokumen Nota Dinas (Wajib untuk Disetujui)
             </label>
@@ -213,7 +213,7 @@ export default function AdminApprovalModal({ isOpen, onClose, booking, onSaveApp
                     <span style={{ fontSize: '0.8125rem', fontWeight: 700, color: 'var(--text-main)', display: 'block' }}>
                       {formData.nota_dinas_name || 'Dokumen_Nota_Dinas.pdf'}
                     </span>
-                    <span style={{ fontSize: '0.7rem', color: '#16a34a', fontWeight: 600 }}>
+                    <span style={{ fontSize: '0.7rem', color: 'var(--text-main)', fontWeight: 600 }}>
                       ✓ Berkas Nota Dinas Terunggah
                     </span>
                   </div>
@@ -264,7 +264,7 @@ export default function AdminApprovalModal({ isOpen, onClose, booking, onSaveApp
                   style={{ display: 'none' }}
                 />
                 {isUploading ? (
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#0284c7', fontSize: '0.8125rem', fontWeight: 600 }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--text-main)', fontSize: '0.8125rem', fontWeight: 600 }}>
                     <Loader2 size={18} style={{ animation: 'spin 1s linear infinite' }} />
                     Mengunggah Dokumen Nota Dinas...
                   </div>
@@ -504,7 +504,7 @@ export default function AdminApprovalModal({ isOpen, onClose, booking, onSaveApp
         <div className="modal-overlay" style={{ zIndex: 1400 }} onClick={() => setPreviewImageModal({ isOpen: false, url: '', name: '' })}>
           <div 
             className="modal-container glass-card" 
-            style={{ maxWidth: '850px', width: '94%', padding: '1.25rem', borderRadius: '16px' }}
+            style={{ maxWidth: '850px', width: '94%', padding: '1.25rem', borderRadius: '8px' }}
             onClick={(e) => e.stopPropagation()}
           >
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem', borderBottom: '1px solid var(--card-border)', paddingBottom: '0.75rem' }}>
@@ -534,12 +534,12 @@ export default function AdminApprovalModal({ isOpen, onClose, booking, onSaveApp
               </div>
             </div>
 
-            <div style={{ textAlign: 'center', background: 'rgba(0, 0, 0, 0.05)', padding: '0.75rem', borderRadius: '12px', maxHeight: '78vh', minHeight: '300px', display: 'flex', justifyContent: 'center', alignItems: 'center', overflow: 'hidden' }}>
+            <div style={{ textAlign: 'center', background: 'var(--input-bg)', padding: '0.75rem', borderRadius: '8px', maxHeight: '78vh', minHeight: '300px', display: 'flex', justifyContent: 'center', alignItems: 'center', overflow: 'hidden' }}>
               {isImageFile(previewImageModal.url, previewImageModal.name) ? (
                 <img 
                   src={previewImageModal.url} 
                   alt="Pratinjau Nota Dinas" 
-                  style={{ maxWidth: '100%', maxHeight: '70vh', objectFit: 'contain', borderRadius: '8px', boxShadow: '0 4px 20px rgba(0,0,0,0.15)' }} 
+                  style={{ maxWidth: '100%', maxHeight: '70vh', objectFit: 'contain', borderRadius: '8px', boxShadow: '0 1px 3px rgba(0, 0, 0, 0.05)' }}
                   onError={(e) => {
                     e.target.style.display = 'none';
                     const parent = e.target.parentElement;

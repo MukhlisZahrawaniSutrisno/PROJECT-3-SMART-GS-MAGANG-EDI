@@ -34,9 +34,9 @@ export default function AnalyticsDashboard({
   onOpenBookingModal 
 }) {
   const isDark = theme === 'dark';
-  const textColor = isDark ? '#cbd5e1' : '#334155';
-  const titleColor = isDark ? '#ffffff' : '#0f172a';
-  const gridColor = isDark ? 'rgba(255, 255, 255, 0.08)' : 'rgba(0, 0, 0, 0.08)';
+  const textColor = isDark ? '#C4C4C4' : '#666666';
+  const titleColor = isDark ? '#FFFFFF' : '#1A1A1A';
+  const gridColor = isDark ? 'rgba(255, 255, 255, 0.08)' : '#E5E7EB';
 
   const getNormalizedStatus = (rawStatus) => {
     if (!rawStatus) return 'Menunggu Persetujuan';
@@ -70,11 +70,11 @@ export default function AnalyticsDashboard({
         label: 'Jumlah Peminjaman',
         data: [floorCounts['9'], floorCounts['11'], floorCounts['12']],
         backgroundColor: [
-          'rgba(224, 0, 0, 0.85)',
-          'rgba(59, 130, 246, 0.85)',
-          'rgba(34, 197, 94, 0.85)',
+          '#CC0000',
+          '#666666',
+          '#A3A3A3',
         ],
-        borderColor: ['#e00000', '#3b82f6', '#22c55e'],
+        borderColor: ['#CC0000', '#666666', '#A3A3A3'],
         borderWidth: 1,
         borderRadius: 8,
       },
@@ -103,14 +103,14 @@ export default function AnalyticsDashboard({
           statusCounts['Dibatalkan']
         ],
         backgroundColor: [
-          'rgba(14, 165, 233, 0.85)',
-          'rgba(34, 197, 94, 0.85)',
-          'rgba(22, 163, 74, 0.85)',
-          'rgba(234, 179, 8, 0.85)',
-          'rgba(59, 130, 246, 0.85)',
-          'rgba(239, 68, 68, 0.85)',
+          '#CC0000',
+          '#A3A3A3',
+          '#4D4D4D',
+          '#D4D4D4',
+          '#666666',
+          '#8A0000',
         ],
-        borderColor: isDark ? '#0b0f19' : '#ffffff',
+        borderColor: isDark ? '#1A1A1A' : '#FFFFFF',
         borderWidth: 2,
       },
     ],
@@ -123,7 +123,7 @@ export default function AnalyticsDashboard({
       legend: {
         labels: {
           color: textColor,
-          font: { family: 'Plus Jakarta Sans', size: 12 }
+          font: { family: 'Helvetica Neue, Arial, sans-serif', size: 12 }
         }
       }
     },
@@ -161,9 +161,9 @@ export default function AnalyticsDashboard({
                 fontSize: '0.9375rem', 
                 padding: '0.65rem 1.35rem',
                 fontWeight: 800,
-                borderRadius: '12px',
+                borderRadius: '8px',
                 background: 'var(--primary-red)',
-                boxShadow: '0 4px 14px rgba(224, 0, 0, 0.35)',
+                boxShadow: '0 1px 3px rgba(0, 0, 0, 0.05)',
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '0.5rem',
@@ -182,7 +182,7 @@ export default function AnalyticsDashboard({
             alignItems: 'center',
             background: 'var(--input-bg)',
             padding: '0.4rem',
-            borderRadius: '14px',
+            borderRadius: '8px',
             border: '1.5px solid var(--card-border)',
             gap: '0.4rem',
             width: 'fit-content',
@@ -196,15 +196,15 @@ export default function AnalyticsDashboard({
                 alignItems: 'center',
                 gap: '0.5rem',
                 padding: '0.55rem 1.1rem',
-                borderRadius: '10px',
+                borderRadius: '8px',
                 border: 'none',
                 background: activeTab === 'monitoring' ? 'var(--primary-red)' : 'transparent',
-                color: activeTab === 'monitoring' ? '#ffffff' : 'var(--text-title)',
+                color: activeTab === 'monitoring' ? '#FFFFFF' : 'var(--text-title)',
                 fontSize: '0.875rem',
                 fontWeight: activeTab === 'monitoring' ? 800 : 700,
                 cursor: 'pointer',
                 transition: 'all 0.2s ease',
-                boxShadow: activeTab === 'monitoring' ? '0 2px 10px rgba(224, 0, 0, 0.35)' : 'none'
+                boxShadow: activeTab === 'monitoring' ? '0 1px 3px rgba(0, 0, 0, 0.05)' : 'none'
               }}
             >
               <Calendar size={16} />
@@ -219,15 +219,15 @@ export default function AnalyticsDashboard({
                 alignItems: 'center',
                 gap: '0.5rem',
                 padding: '0.55rem 1.1rem',
-                borderRadius: '10px',
+                borderRadius: '8px',
                 border: 'none',
                 background: activeTab === 'catalog' ? 'var(--primary-red)' : 'transparent',
-                color: activeTab === 'catalog' ? '#ffffff' : 'var(--text-title)',
+                color: activeTab === 'catalog' ? '#FFFFFF' : 'var(--text-title)',
                 fontSize: '0.875rem',
                 fontWeight: activeTab === 'catalog' ? 800 : 700,
                 cursor: 'pointer',
                 transition: 'all 0.2s ease',
-                boxShadow: activeTab === 'catalog' ? '0 2px 10px rgba(224, 0, 0, 0.35)' : 'none'
+                boxShadow: activeTab === 'catalog' ? '0 1px 3px rgba(0, 0, 0, 0.05)' : 'none'
               }}
             >
               <Building2 size={16} />
@@ -242,15 +242,15 @@ export default function AnalyticsDashboard({
                 alignItems: 'center',
                 gap: '0.5rem',
                 padding: '0.55rem 1.1rem',
-                borderRadius: '10px',
+                borderRadius: '8px',
                 border: 'none',
                 background: activeTab === 'analytics' ? 'var(--primary-red)' : 'transparent',
-                color: activeTab === 'analytics' ? '#ffffff' : 'var(--text-title)',
+                color: activeTab === 'analytics' ? '#FFFFFF' : 'var(--text-title)',
                 fontSize: '0.875rem',
                 fontWeight: activeTab === 'analytics' ? 800 : 700,
                 cursor: 'pointer',
                 transition: 'all 0.2s ease',
-                boxShadow: activeTab === 'analytics' ? '0 2px 10px rgba(224, 0, 0, 0.35)' : 'none'
+                boxShadow: activeTab === 'analytics' ? '0 1px 3px rgba(0, 0, 0, 0.05)' : 'none'
               }}
             >
               <BarChart2 size={16} />
@@ -261,53 +261,53 @@ export default function AnalyticsDashboard({
       </div>
 
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.25rem' }}>
-        <div className="glass-card" style={{ padding: '1.25rem' }}>
+        <div className="glass-card corporate-stat-card" style={{ padding: '1.25rem' }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.75rem' }}>
             <span style={{ fontSize: '0.8125rem', color: 'var(--text-muted)', fontWeight: 600 }}>Total Peminjaman</span>
-            <div style={{ padding: '0.5rem', borderRadius: '8px', background: 'rgba(224, 0, 0, 0.15)', color: 'var(--primary-red)' }}>
+            <div style={{ padding: '0.5rem', borderRadius: '8px', background: 'var(--input-bg)', color: 'var(--primary-red)' }}>
               <CalendarCheck size={20} />
             </div>
           </div>
-          <div style={{ fontSize: '1.875rem', fontWeight: 800, color: 'var(--text-title)' }}>{totalBookings}</div>
-          <span style={{ fontSize: '0.75rem', color: 'var(--status-done-text)', display: 'flex', alignItems: 'center', gap: '0.25rem', marginTop: '0.25rem' }}>
+          <div style={{ fontSize: '1.875rem', fontWeight: 800, color: 'var(--primary-red)' }}>{totalBookings}</div>
+          <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: '0.25rem', marginTop: '0.25rem' }}>
             <TrendingUp size={12} /> Real-time Supabase Data
           </span>
         </div>
 
-        <div className="glass-card" style={{ padding: '1.25rem' }}>
+        <div className="glass-card corporate-stat-card" style={{ padding: '1.25rem' }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.75rem' }}>
             <span style={{ fontSize: '0.8125rem', color: 'var(--text-muted)', fontWeight: 600 }}>Unggah Nota Dinas</span>
-            <div style={{ padding: '0.5rem', borderRadius: '8px', background: 'rgba(14, 165, 233, 0.15)', color: '#0284c7' }}>
+            <div style={{ padding: '0.5rem', borderRadius: '8px', background: 'var(--input-bg)', color: 'var(--text-main)' }}>
               <FileText size={20} />
             </div>
           </div>
-          <div style={{ fontSize: '1.875rem', fontWeight: 800, color: 'var(--status-nota-text)' }}>{notaCount}</div>
+          <div style={{ fontSize: '1.875rem', fontWeight: 800, color: 'var(--primary-red)' }}>{notaCount}</div>
           <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '0.25rem', display: 'block' }}>
             Ruangan Tersedia (Tahap Unggah Nota)
           </span>
         </div>
 
-        <div className="glass-card" style={{ padding: '1.25rem' }}>
+        <div className="glass-card corporate-stat-card" style={{ padding: '1.25rem' }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.75rem' }}>
             <span style={{ fontSize: '0.8125rem', color: 'var(--text-muted)', fontWeight: 600 }}>Disetujui (Resmi)</span>
-            <div style={{ padding: '0.5rem', borderRadius: '8px', background: 'rgba(34, 197, 94, 0.15)', color: '#16a34a' }}>
+            <div style={{ padding: '0.5rem', borderRadius: '8px', background: 'var(--input-bg)', color: 'var(--text-main)' }}>
               <CheckSquare size={20} />
             </div>
           </div>
-          <div style={{ fontSize: '1.875rem', fontWeight: 800, color: 'var(--status-approved-text)' }}>{approvedCount}</div>
+          <div style={{ fontSize: '1.875rem', fontWeight: 800, color: 'var(--primary-red)' }}>{approvedCount}</div>
           <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '0.25rem', display: 'block' }}>
             Nota Dinas Valid & Disetujui
           </span>
         </div>
 
-        <div className="glass-card" style={{ padding: '1.25rem' }}>
+        <div className="glass-card corporate-stat-card" style={{ padding: '1.25rem' }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.75rem' }}>
             <span style={{ fontSize: '0.8125rem', color: 'var(--text-muted)', fontWeight: 600 }}>Menunggu Persetujuan</span>
-            <div style={{ padding: '0.5rem', borderRadius: '8px', background: 'rgba(234, 179, 8, 0.15)', color: '#ca8a04' }}>
+            <div style={{ padding: '0.5rem', borderRadius: '8px', background: 'var(--input-bg)', color: 'var(--text-main)' }}>
               <Clock size={20} />
             </div>
           </div>
-          <div style={{ fontSize: '1.875rem', fontWeight: 800, color: 'var(--status-pending-text)' }}>{pendingCount}</div>
+          <div style={{ fontSize: '1.875rem', fontWeight: 800, color: 'var(--primary-red)' }}>{pendingCount}</div>
           <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '0.25rem', display: 'block' }}>
             Pengajuan Baru Awal
           </span>
@@ -329,7 +329,7 @@ export default function AnalyticsDashboard({
             Persentase Status Peminjaman Ruang
           </h3>
           <div style={{ height: '280px', position: 'relative', display: 'flex', justifyContent: 'center' }}>
-            <Pie data={statusPieData} options={{ responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'right', labels: { color: textColor, font: { family: 'Plus Jakarta Sans', size: 12 } } } } }} />
+            <Pie data={statusPieData} options={{ responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'right', labels: { color: textColor, font: { family: 'Helvetica Neue, Arial, sans-serif', size: 12 } } } } }} />
           </div>
         </div>
       </div>

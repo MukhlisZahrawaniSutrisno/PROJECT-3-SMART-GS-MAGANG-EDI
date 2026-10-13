@@ -64,7 +64,7 @@ export default function AdminLoginModal({ isOpen, onClose, onLoginSuccess }) {
         </div>
 
         {errorMsg && (
-          <div style={{ background: 'rgba(239, 68, 68, 0.15)', border: '1px solid rgba(239, 68, 68, 0.3)', padding: '0.625rem 0.875rem', borderRadius: '8px', color: '#ef4444', fontSize: '0.8125rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+          <div style={{ background: 'var(--input-bg)', border: '1px solid var(--card-border)', padding: '0.625rem 0.875rem', borderRadius: '8px', color: 'var(--primary-red)', fontSize: '0.8125rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
             <AlertCircle size={16} />
             {errorMsg}
           </div>

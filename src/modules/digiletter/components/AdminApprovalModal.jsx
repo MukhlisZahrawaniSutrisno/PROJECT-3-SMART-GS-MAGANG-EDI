@@ -87,7 +87,7 @@ export default function AdminApprovalModal({ isOpen, onClose, letter, nextAgenda
         {/* Header Modal */}
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.25rem', paddingBottom: '0.875rem', borderBottom: '1px solid var(--card-border)' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.625rem' }}>
-            <div style={{ padding: '0.5rem', background: 'rgba(34, 197, 94, 0.12)', color: '#16a34a', borderRadius: '10px' }}>
+            <div style={{ padding: '0.5rem', background: 'var(--input-bg)', color: 'var(--text-main)', borderRadius: '8px' }}>
               <ShieldCheck size={20} />
             </div>
             <div>
@@ -108,7 +108,7 @@ export default function AdminApprovalModal({ isOpen, onClose, letter, nextAgenda
         </div>
 
         {/* Ringkasan Detail Pengajuan */}
-        <div style={{ background: 'var(--input-bg)', padding: '1rem', borderRadius: '12px', marginBottom: '1.25rem', border: '1px solid var(--input-border)', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', fontSize: '0.8125rem' }}>
+        <div style={{ background: 'var(--input-bg)', padding: '1rem', borderRadius: '8px', marginBottom: '1.25rem', border: '1px solid var(--input-border)', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', fontSize: '0.8125rem' }}>
           <div>
             <span style={{ color: 'var(--text-muted)' }}>Pemohon / PIC:</span>
             <div style={{ fontWeight: 700, color: 'var(--text-title)' }}>{letter.pic} ({letter.no_pic})</div>
@@ -123,7 +123,7 @@ export default function AdminApprovalModal({ isOpen, onClose, letter, nextAgenda
           </div>
           <div>
             <span style={{ color: 'var(--text-muted)' }}>Tanggal TTD / Agenda:</span>
-            <div style={{ fontWeight: 700, color: '#0369a1' }}>{letter.tanggal_ttd || letter.tanggal_pengajuan}</div>
+            <div style={{ fontWeight: 700, color: 'var(--text-main)' }}>{letter.tanggal_ttd || letter.tanggal_pengajuan}</div>
           </div>
           <div style={{ gridColumn: 'span 2' }}>
             <span style={{ color: 'var(--text-muted)' }}>Perihal:</span>
@@ -193,11 +193,11 @@ export default function AdminApprovalModal({ isOpen, onClose, letter, nextAgenda
 
           {/* Live Preview Box Nomor Surat */}
           {selectedStatus === 'Disetujui' && (
-            <div style={{ background: 'rgba(224, 0, 0, 0.06)', border: '1px solid rgba(224, 0, 0, 0.25)', padding: '1rem', borderRadius: '12px', margin: '1rem 0' }}>
+            <div style={{ background: 'var(--input-bg)', border: '1px solid var(--card-border)', padding: '1rem', borderRadius: '8px', margin: '1rem 0' }}>
               <div style={{ fontSize: '0.75rem', color: 'var(--primary-red)', fontWeight: 700, marginBottom: '0.35rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                 Preview Nomor Surat Tergenerate Otomatis:
               </div>
-              <div style={{ fontFamily: 'monospace', fontSize: '1.05rem', fontWeight: 800, color: 'var(--primary-red)', wordBreak: 'break-all' }}>
+              <div style={{ fontFamily: 'Helvetica Neue, Arial, sans-serif', fontSize: '1.05rem', fontWeight: 800, color: 'var(--primary-red)', wordBreak: 'break-all' }}>
                 {previewNumber}
               </div>
               <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '0.5rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.5rem' }}>

@@ -43,7 +43,7 @@ export default function GoogleSheetsModal({ isOpen, onClose, letters, onSyncSucc
       <div className="modal-content glass-card" style={{ maxWidth: '680px', width: '90%' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingBottom: '1rem', borderBottom: '1px solid var(--card-border)' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
-            <Database size={22} style={{ color: '#0284c7' }} />
+            <Database size={22} style={{ color: 'var(--text-main)' }} />
             <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: 'var(--text-title)', margin: 0 }}>
               Integrasi Google Sheets Database
             </h3>
@@ -56,15 +56,15 @@ export default function GoogleSheetsModal({ isOpen, onClose, letters, onSyncSucc
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', marginTop: '1.25rem' }}>
           
           {/* Target Spreadsheet Link */}
-          <div style={{ background: 'rgba(2, 132, 199, 0.08)', border: '1px solid rgba(2, 132, 199, 0.25)', padding: '0.875rem 1rem', borderRadius: '10px' }}>
-            <div style={{ fontSize: '0.8125rem', fontWeight: 700, color: '#0369a1', marginBottom: '0.25rem' }}>
+          <div style={{ background: 'var(--input-bg)', border: '1px solid var(--card-border)', padding: '0.875rem 1rem', borderRadius: '8px' }}>
+            <div style={{ fontSize: '0.8125rem', fontWeight: 700, color: 'var(--text-main)', marginBottom: '0.25rem' }}>
               Target Google Spreadsheet Database:
             </div>
             <a 
               href="https://docs.google.com/spreadsheets/d/1Z8CyLkvYwnpt2IoyszhKFAubGlUeaP7R_Vxl9agvEjo/edit?gid=0#gid=0"
               target="_blank"
               rel="noreferrer"
-              style={{ fontSize: '0.8125rem', color: '#0284c7', textDecoration: 'underline', wordBreak: 'break-all', display: 'inline-flex', alignItems: 'center', gap: '0.35rem' }}
+              style={{ fontSize: '0.8125rem', color: 'var(--text-main)', textDecoration: 'underline', wordBreak: 'break-all', display: 'inline-flex', alignItems: 'center', gap: '0.35rem' }}
             >
               https://docs.google.com/spreadsheets/d/1Z8CyLkvYwnpt2IoyszhKFAubGlUeaP7R_Vxl9agvEjo/edit
               <ExternalLink size={14} />
@@ -82,7 +82,7 @@ export default function GoogleSheetsModal({ isOpen, onClose, letters, onSyncSucc
                 className="btn btn-secondary"
                 style={{ fontSize: '0.75rem', padding: '0.3rem 0.65rem' }}
               >
-                {copied ? <Check size={14} style={{ color: '#16a34a' }} /> : <Copy size={14} />}
+                {copied ? <Check size={14} style={{ color: 'var(--text-main)' }} /> : <Copy size={14} />}
                 {copied ? 'Tersalin!' : 'Salin Kode Script'}
               </button>
             </div>
@@ -91,7 +91,7 @@ export default function GoogleSheetsModal({ isOpen, onClose, letters, onSyncSucc
               rows={5}
               value={GOOGLE_APPS_SCRIPT_CODE}
               className="form-input"
-              style={{ fontFamily: 'monospace', fontSize: '0.75rem', lineHeight: 1.4, background: 'var(--input-bg)' }}
+              style={{ fontFamily: 'Helvetica Neue, Arial, sans-serif', fontSize: '0.75rem', lineHeight: 1.4, background: 'var(--input-bg)' }}
             />
           </div>
 
@@ -124,7 +124,7 @@ export default function GoogleSheetsModal({ isOpen, onClose, letters, onSyncSucc
               onClick={handleSyncAll}
               disabled={isSyncing}
               className="btn btn-secondary"
-              style={{ fontSize: '0.8125rem', background: 'rgba(37, 99, 235, 0.1)', color: '#2563eb', borderColor: 'rgba(37, 99, 235, 0.3)' }}
+              style={{ fontSize: '0.8125rem', background: 'var(--input-bg)', color: 'var(--text-main)', borderColor: 'var(--card-border)' }}
             >
               <RefreshCw size={14} className={isSyncing ? 'spin' : ''} />
               {isSyncing ? 'Menyinkronkan...' : 'Sinkronkan Sekarang'}

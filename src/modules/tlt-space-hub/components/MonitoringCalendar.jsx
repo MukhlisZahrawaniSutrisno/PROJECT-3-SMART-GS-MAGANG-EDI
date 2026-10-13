@@ -254,9 +254,9 @@ export default function MonitoringCalendar({ bookings = [], rooms = [], isAdmin,
           marginBottom: '1rem',
           padding: '0.625rem 1rem',
           borderRadius: '8px',
-          background: 'rgba(234, 179, 8, 0.15)',
-          border: '1px solid rgba(234, 179, 8, 0.3)',
-          color: 'var(--status-pending-text)',
+          background: 'var(--input-bg)',
+          border: '1px solid var(--card-border)',
+          color: 'var(--text-muted)',
           fontSize: '0.8125rem',
           fontWeight: 600,
           display: 'flex',
@@ -307,14 +307,14 @@ export default function MonitoringCalendar({ bookings = [], rooms = [], isAdmin,
                       ? '2px dashed var(--primary-red)' 
                       : '1px solid var(--card-border)',
                   background: isSelected
-                    ? 'rgba(224, 0, 0, 0.18)'
+                    ? 'var(--input-bg)'
                     : isPastDate
                       ? 'var(--input-bg)'
                       : hasBookings
-                        ? 'rgba(224, 0, 0, 0.08)'
+                        ? 'var(--input-bg)'
                         : item.isCurrentMonth
                           ? 'var(--card-bg)'
-                          : 'rgba(0, 0, 0, 0.03)',
+                          : 'var(--input-bg)',
                   opacity: item.isCurrentMonth ? (isPastDate ? 0.75 : 1) : 0.45,
                 }}
               >
@@ -338,14 +338,14 @@ export default function MonitoringCalendar({ bookings = [], rooms = [], isAdmin,
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      background: isToday ? 'rgba(224, 0, 0, 0.15)' : 'transparent'
+                      background: isToday ? 'var(--input-bg)' : 'transparent'
                     }}
                   >
                     {item.date.getDate()}
                   </span>
 
                   {isToday && (
-                    <span style={{ fontSize: '0.625rem', fontWeight: 700, color: 'var(--primary-red)', background: 'rgba(224, 0, 0, 0.1)', padding: '0.1rem 0.35rem', borderRadius: '4px' }}>
+                    <span style={{ fontSize: '0.625rem', fontWeight: 700, color: 'var(--primary-red)', background: 'var(--input-bg)', padding: '0.1rem 0.35rem', borderRadius: '4px' }}>
                       Hari ini
                     </span>
                   )}
@@ -359,7 +359,7 @@ export default function MonitoringCalendar({ bookings = [], rooms = [], isAdmin,
                         fontSize: '0.6875rem', 
                         fontWeight: 700, 
                         color: isPastDate ? 'var(--text-muted)' : 'var(--primary-red)', 
-                        background: isPastDate ? 'rgba(148, 163, 184, 0.15)' : 'rgba(224, 0, 0, 0.1)', 
+                        background: isPastDate ? 'var(--input-bg)' : 'var(--input-bg)',
                         padding: '0.15rem 0.4rem', 
                         borderRadius: '4px',
                         whiteSpace: 'nowrap',
@@ -382,7 +382,7 @@ export default function MonitoringCalendar({ bookings = [], rooms = [], isAdmin,
                                 width: '6px',
                                 height: '6px',
                                 borderRadius: '50%',
-                                backgroundColor: isPastDate ? '#94a3b8' : dotColor,
+                                backgroundColor: isPastDate ? 'var(--input-bg)' : dotColor,
                                 display: 'inline-block'
                               }}
                             />
@@ -407,7 +407,7 @@ export default function MonitoringCalendar({ bookings = [], rooms = [], isAdmin,
       {/* MINI POP-UP MODAL INFORMASI / RIWAYAT KETERSEDIAAN RUANGAN */}
       {isDetailModalOpen && (
         <div className="modal-overlay" style={{ zIndex: 1100 }}>
-          <div className="modal-container glass-card" style={{ maxWidth: '410px', width: '90%', maxHeight: '82vh', padding: '1rem 1.15rem', borderRadius: '14px' }}>
+          <div className="modal-container glass-card" style={{ maxWidth: '410px', width: '90%', maxHeight: '82vh', padding: '1rem 1.15rem', borderRadius: '8px' }}>
             
             {/* Header Mini Modal */}
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingBottom: '0.5rem', borderBottom: '1px solid var(--card-border)', marginBottom: '0.625rem' }}>
@@ -446,11 +446,11 @@ export default function MonitoringCalendar({ bookings = [], rooms = [], isAdmin,
                       borderRadius: '8px',
                       padding: '0.45rem 0.625rem',
                       border: hasApprovedBooking 
-                        ? '1px solid rgba(224, 0, 0, 0.4)' 
+                        ? '1px solid var(--card-border)'
                         : roomBookings.length > 0
-                          ? '1px solid rgba(234, 179, 8, 0.4)'
+                          ? '1px solid var(--card-border)'
                           : '1px solid var(--card-border)',
-                      boxShadow: '0 2px 5px rgba(0,0,0,0.02)'
+                      boxShadow: '0 1px 3px rgba(0, 0, 0, 0.05)'
                     }}
                   >
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.2rem' }}>
@@ -475,15 +475,15 @@ export default function MonitoringCalendar({ bookings = [], rooms = [], isAdmin,
                             <div
                               key={idx}
                               style={{
-                                background: isApproved ? 'rgba(224, 0, 0, 0.05)' : 'rgba(234, 179, 8, 0.06)',
-                                borderLeft: isApproved ? '2.5px solid var(--primary-red)' : '2.5px solid #ca8a04',
+                                background: isApproved ? 'var(--input-bg)' : 'var(--input-bg)',
+                                borderLeft: isApproved ? '2.5px solid var(--primary-red)' : '2.5px solid var(--card-border)',
                                 padding: '0.3rem 0.45rem',
                                 borderRadius: '0 5px 5px 0',
                                 fontSize: '0.6875rem'
                               }}
                             >
                               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '0.2rem', marginBottom: '0.05rem' }}>
-                                <div style={{ display: 'flex', alignItems: 'center', gap: '0.2rem', color: isApproved ? 'var(--primary-red)' : '#ca8a04', fontWeight: 700, fontSize: '0.65rem' }}>
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '0.2rem', color: isApproved ? 'var(--primary-red)' : 'var(--text-main)', fontWeight: 700, fontSize: '0.65rem' }}>
                                   <Clock size={10} />
                                   {b.pukul || `${b.pukul_mulai} - ${b.pukul_selesai}`}
                                 </div>
@@ -493,8 +493,8 @@ export default function MonitoringCalendar({ bookings = [], rooms = [], isAdmin,
                                   padding: '0.05rem 0.25rem',
                                   borderRadius: '3px',
                                   background: 'var(--card-bg)',
-                                  color: isApproved ? 'var(--primary-red)' : '#ca8a04',
-                                  border: isApproved ? '1px solid rgba(224, 0, 0, 0.25)' : '1px solid rgba(234, 179, 8, 0.3)',
+                                  color: isApproved ? 'var(--primary-red)' : 'var(--text-main)',
+                                  border: isApproved ? '1px solid var(--card-border)' : '1px solid var(--card-border)',
                                   whiteSpace: 'nowrap'
                                 }}>
                                   {isApproved ? (isSelectedDatePast ? 'Selesai' : '⛔ Sudah Disetujui') : '⏳ Menunggu'}
@@ -518,10 +518,10 @@ export default function MonitoringCalendar({ bookings = [], rooms = [], isAdmin,
                         display: 'flex', 
                         alignItems: 'center', 
                         gap: '0.25rem', 
-                        color: isSelectedDatePast ? 'var(--text-muted)' : '#16a34a', 
+                        color: isSelectedDatePast ? 'var(--text-muted)' : 'var(--text-main)',
                         fontSize: '0.6875rem', 
                         fontWeight: 600,
-                        background: isSelectedDatePast ? 'var(--input-bg)' : 'rgba(34, 197, 94, 0.08)',
+                        background: isSelectedDatePast ? 'var(--input-bg)' : 'var(--input-bg)',
                         padding: '0.25rem 0.4rem',
                         borderRadius: '4px'
                       }}>
@@ -559,8 +559,8 @@ export default function MonitoringCalendar({ bookings = [], rooms = [], isAdmin,
                   style={{
                     fontSize: '0.75rem',
                     padding: '0.3rem 0.75rem',
-                    background: 'linear-gradient(135deg, var(--primary-red) 0%, #b30000 100%)',
-                    boxShadow: '0 3px 10px rgba(224, 0, 0, 0.3)'
+                    background: 'var(--primary-red)',
+                    boxShadow: '0 1px 3px rgba(0, 0, 0, 0.05)'
                   }}
                 >
                   <Plus size={13} />

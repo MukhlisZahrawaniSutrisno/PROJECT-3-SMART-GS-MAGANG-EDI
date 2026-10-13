@@ -30,7 +30,7 @@ export default function AdminLoginModal({ isOpen, onClose, onLoginSuccess }) {
         {/* Header Modal */}
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.25rem', paddingBottom: '0.875rem', borderBottom: '1px solid var(--card-border)' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.625rem' }}>
-            <div style={{ width: '38px', height: '38px', borderRadius: '10px', background: 'rgba(224, 0, 0, 0.1)', color: 'var(--primary-red)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <div style={{ width: '38px', height: '38px', borderRadius: '8px', background: 'var(--input-bg)', color: 'var(--primary-red)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <Lock size={20} />
             </div>
             <div>
@@ -92,7 +92,7 @@ export default function AdminLoginModal({ isOpen, onClose, onLoginSuccess }) {
               </button>
             </div>
             {error && (
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', color: '#dc2626', fontSize: '0.75rem', marginTop: '0.5rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', color: 'var(--primary-red)', fontSize: '0.75rem', marginTop: '0.5rem' }}>
                 <AlertCircle size={14} style={{ flexShrink: 0 }} />
                 {error}
               </div>

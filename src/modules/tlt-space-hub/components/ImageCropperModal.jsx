@@ -112,29 +112,29 @@ export default function ImageCropperModal({ isOpen, onClose, imageSrc, onCropCom
           style={{ 
             width: '100%', 
             height: '260px', 
-            borderRadius: '12px', 
+            borderRadius: '8px',
             overflow: 'hidden', 
             position: 'relative', 
-            background: '#0f172a',
+            background: 'var(--input-bg)',
             cursor: isDragging ? 'grabbing' : 'grab',
             border: '2px solid var(--primary-red)',
-            boxShadow: '0 4px 20px rgba(0,0,0,0.25)',
+            boxShadow: '0 1px 3px rgba(0, 0, 0, 0.05)',
             userSelect: 'none'
           }}
         >
           <div style={{
             position: 'absolute',
             top: 0, left: 0, right: 0, bottom: 0,
-            border: '2px dashed rgba(255, 255, 255, 0.6)',
-            borderRadius: '10px',
+            border: '2px dashed var(--card-border)',
+            borderRadius: '8px',
             pointerEvents: 'none',
             zIndex: 10,
-            boxShadow: 'inset 0 0 0 1000px rgba(0, 0, 0, 0.25)'
+            boxShadow: '0 1px 3px rgba(0, 0, 0, 0.05)'
           }}>
-            <div style={{ position: 'absolute', top: '33.3%', left: 0, right: 0, borderTop: '1px dashed rgba(255,255,255,0.3)' }} />
-            <div style={{ position: 'absolute', top: '66.6%', left: 0, right: 0, borderTop: '1px dashed rgba(255,255,255,0.3)' }} />
-            <div style={{ position: 'absolute', left: '33.3%', top: 0, bottom: 0, borderLeft: '1px dashed rgba(255,255,255,0.3)' }} />
-            <div style={{ position: 'absolute', left: '66.6%', top: 0, bottom: 0, borderLeft: '1px dashed rgba(255,255,255,0.3)' }} />
+            <div style={{ position: 'absolute', top: '33.3%', left: 0, right: 0, borderTop: '1px dashed var(--card-border)' }} />
+            <div style={{ position: 'absolute', top: '66.6%', left: 0, right: 0, borderTop: '1px dashed var(--card-border)' }} />
+            <div style={{ position: 'absolute', left: '33.3%', top: 0, bottom: 0, borderLeft: '1px dashed var(--card-border)' }} />
+            <div style={{ position: 'absolute', left: '66.6%', top: 0, bottom: 0, borderLeft: '1px dashed var(--card-border)' }} />
           </div>
 
           <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -152,7 +152,7 @@ export default function ImageCropperModal({ isOpen, onClose, imageSrc, onCropCom
             />
           </div>
 
-          <div style={{ position: 'absolute', bottom: '10px', right: '10px', background: 'rgba(0,0,0,0.7)', color: '#fff', padding: '0.2rem 0.5rem', borderRadius: '4px', fontSize: '0.7rem', display: 'flex', alignItems: 'center', gap: '0.25rem', pointerEvents: 'none' }}>
+          <div style={{ position: 'absolute', bottom: '10px', right: '10px', background: 'rgba(0,0,0,0.7)', color: '#FFFFFF', padding: '0.2rem 0.5rem', borderRadius: '4px', fontSize: '0.7rem', display: 'flex', alignItems: 'center', gap: '0.25rem', pointerEvents: 'none' }}>
             <Move size={12} /> Drag untuk Geser
           </div>
         </div>

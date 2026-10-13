@@ -21,13 +21,13 @@ export default function ConfirmDeleteModal({ isOpen, onClose, onConfirm, title, 
           width: '56px', 
           height: '56px', 
           borderRadius: '50%', 
-          background: 'rgba(239, 68, 68, 0.15)', 
-          border: '1px solid rgba(239, 68, 68, 0.3)',
+          background: 'var(--input-bg)',
+          border: '1px solid var(--card-border)',
           display: 'flex', 
           alignItems: 'center', 
           justifyContent: 'center', 
           margin: '0 auto 1.25rem auto',
-          color: '#ef4444'
+          color: 'var(--primary-red)'
         }}>
           <AlertTriangle size={28} />
         </div>
@@ -40,7 +40,7 @@ export default function ConfirmDeleteModal({ isOpen, onClose, onConfirm, title, 
           {message || 'Apakah Anda yakin ingin menghapus data ini?'}
         </p>
 
-        <p style={{ fontSize: '0.75rem', color: '#ef4444', fontWeight: 600, marginBottom: '1.5rem' }}>
+        <p style={{ fontSize: '0.75rem', color: 'var(--primary-red)', fontWeight: 600, marginBottom: '1.5rem' }}>
           ⚠️ Perhatian: Data yang telah dihapus tidak dapat dikembalikan.
         </p>
 
@@ -62,8 +62,8 @@ export default function ConfirmDeleteModal({ isOpen, onClose, onConfirm, title, 
             className="btn btn-primary"
             style={{ 
               minWidth: '130px', 
-              background: 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)',
-              boxShadow: '0 4px 14px rgba(239, 68, 68, 0.35)'
+              background: 'var(--primary-red)',
+              boxShadow: '0 1px 3px rgba(0, 0, 0, 0.05)'
             }}
           >
             <Trash2 size={16} /> Ya, Hapus

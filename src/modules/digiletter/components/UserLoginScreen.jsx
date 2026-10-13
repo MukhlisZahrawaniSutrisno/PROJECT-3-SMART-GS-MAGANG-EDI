@@ -33,7 +33,7 @@ export default function UserLoginScreen({ onUserLoginSuccess, onOpenAdminLogin, 
   };
 
   return (
-    <div style={{
+    <div className="corporate-login-screen" style={{
       minHeight: '100vh',
       display: 'flex',
       flexDirection: 'column',
@@ -67,25 +67,25 @@ export default function UserLoginScreen({ onUserLoginSuccess, onOpenAdminLogin, 
           }}
         >
           {theme === 'light' ? (
-            <Moon size={18} style={{ color: '#4f46e5' }} />
+            <Moon size={18} style={{ color: 'var(--text-main)' }} />
           ) : (
-            <Sun size={18} style={{ color: '#f59e0b' }} />
+            <Sun size={18} style={{ color: 'var(--text-main)' }} />
           )}
         </button>
       </div>
 
       {/* Main Login Card */}
       <div 
-        className="glass-card" 
+        className="glass-card corporate-login-card"
         style={{
           width: '100%',
           maxWidth: '440px',
           padding: '2.5rem 2rem',
-          borderRadius: '20px',
-          boxShadow: '0 20px 50px rgba(0, 0, 0, 0.15)',
+          borderRadius: '8px',
+          boxShadow: '0 1px 3px rgba(0, 0, 0, 0.05)',
           border: '1px solid var(--card-border)',
           background: 'var(--card-bg)',
-          backdropFilter: 'blur(16px)'
+          backdropFilter: 'none'
         }}
       >
         {/* Header Branding */}
@@ -94,12 +94,12 @@ export default function UserLoginScreen({ onUserLoginSuccess, onOpenAdminLogin, 
             width: '64px',
             height: '64px',
             margin: '0 auto 1.25rem',
-            borderRadius: '16px',
-            background: '#ffffff',
+            borderRadius: '8px',
+            background: 'var(--card-bg)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            boxShadow: '0 8px 24px rgba(224, 0, 0, 0.15)',
+            boxShadow: '0 1px 3px rgba(0, 0, 0, 0.05)',
             border: '1px solid var(--card-border)',
             padding: '8px'
           }}>
@@ -115,7 +115,7 @@ export default function UserLoginScreen({ onUserLoginSuccess, onOpenAdminLogin, 
             />
           </div>
 
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', padding: '0.25rem 0.75rem', borderRadius: '20px', background: 'rgba(224, 0, 0, 0.08)', color: 'var(--primary-red)', border: '1px solid rgba(224, 0, 0, 0.2)', fontSize: '0.75rem', fontWeight: 700, marginBottom: '0.5rem' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', padding: '0.25rem 0.75rem', borderRadius: '8px', background: 'var(--input-bg)', color: 'var(--primary-red)', border: '1px solid var(--card-border)', fontSize: '0.75rem', fontWeight: 700, marginBottom: '0.5rem' }}>
             <Sparkles size={13} /> TELKOM REGIONAL 3
           </div>
 
@@ -132,7 +132,7 @@ export default function UserLoginScreen({ onUserLoginSuccess, onOpenAdminLogin, 
           display: 'flex',
           background: 'var(--input-bg)',
           padding: '4px',
-          borderRadius: '12px',
+          borderRadius: '8px',
           marginBottom: '1.5rem',
           border: '1px solid var(--card-border)'
         }}>
@@ -154,7 +154,7 @@ export default function UserLoginScreen({ onUserLoginSuccess, onOpenAdminLogin, 
               transition: 'all 0.2s ease',
               background: activeTab === 'user' ? 'var(--card-bg)' : 'transparent',
               color: activeTab === 'user' ? 'var(--primary-red)' : 'var(--text-muted)',
-              boxShadow: activeTab === 'user' ? '0 2px 8px rgba(0, 0, 0, 0.08)' : 'none'
+              boxShadow: activeTab === 'user' ? '0 1px 3px rgba(0, 0, 0, 0.05)' : 'none'
             }}
           >
             <User size={16} />
@@ -179,7 +179,7 @@ export default function UserLoginScreen({ onUserLoginSuccess, onOpenAdminLogin, 
               transition: 'all 0.2s ease',
               background: activeTab === 'admin' ? 'var(--card-bg)' : 'transparent',
               color: activeTab === 'admin' ? 'var(--primary-red)' : 'var(--text-muted)',
-              boxShadow: activeTab === 'admin' ? '0 2px 8px rgba(0, 0, 0, 0.08)' : 'none'
+              boxShadow: activeTab === 'admin' ? '0 1px 3px rgba(0, 0, 0, 0.05)' : 'none'
             }}
           >
             <ShieldCheck size={16} />
@@ -194,10 +194,10 @@ export default function UserLoginScreen({ onUserLoginSuccess, onOpenAdminLogin, 
             alignItems: 'center',
             gap: '0.625rem',
             padding: '0.75rem 1rem',
-            borderRadius: '10px',
-            background: 'var(--status-cancel-bg)',
-            color: 'var(--status-cancel-text)',
-            border: '1px solid rgba(239, 68, 68, 0.3)',
+            borderRadius: '8px',
+            background: 'var(--input-bg)',
+            color: 'var(--text-muted)',
+            border: '1px solid var(--card-border)',
             fontSize: '0.8125rem',
             marginBottom: '1.25rem'
           }}>
@@ -262,7 +262,7 @@ export default function UserLoginScreen({ onUserLoginSuccess, onOpenAdminLogin, 
                 padding: '0.85rem',
                 fontSize: '0.9375rem',
                 fontWeight: 700,
-                borderRadius: '12px',
+                borderRadius: '8px',
                 marginTop: '0.5rem',
                 display: 'flex',
                 alignItems: 'center',
@@ -330,16 +330,16 @@ export default function UserLoginScreen({ onUserLoginSuccess, onOpenAdminLogin, 
                 padding: '0.85rem',
                 fontSize: '0.9375rem',
                 fontWeight: 700,
-                borderRadius: '12px',
+                borderRadius: '8px',
                 marginTop: '0.5rem',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 gap: '0.5rem',
-                background: '#16a34a',
-                color: '#ffffff',
+                background: 'var(--primary-red)',
+                color: '#FFFFFF',
                 border: 'none',
-                boxShadow: '0 4px 14px rgba(22, 163, 74, 0.3)',
+                boxShadow: '0 1px 3px rgba(0, 0, 0, 0.05)',
                 cursor: 'pointer'
               }}
             >

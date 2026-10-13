@@ -54,24 +54,24 @@ export default function PublicMonitoring({ letters, onEditRequest, onDeleteReque
 
           {/* Cards Bar */}
           <div className="stat-grid-bar" style={{ display: 'flex', gap: '0.875rem', flexWrap: 'wrap' }}>
-            <div className="stat-card-box" style={{ background: 'var(--input-bg)', border: '1px solid var(--card-border)', padding: '0.75rem 1.25rem', borderRadius: '12px', textAlign: 'center', minWidth: '130px' }}>
+            <div className="stat-card-box" style={{ background: 'var(--card-bg)', border: '1px solid var(--card-border)', padding: '0.75rem 1.25rem', borderRadius: '8px', textAlign: 'center', minWidth: '130px' }}>
               <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', display: 'block', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em' }}>Total Pengajuan</span>
-              <span className="stat-card-number" style={{ fontSize: '1.45rem', fontWeight: 800, color: 'var(--text-title)' }}>{totalPengajuan}</span>
+              <span className="stat-card-number" style={{ fontSize: '1.45rem', fontWeight: 800, color: 'var(--primary-red)' }}>{totalPengajuan}</span>
             </div>
 
-            <div className="stat-card-box" style={{ background: 'var(--status-pending-bg)', border: '1px solid rgba(234, 179, 8, 0.4)', padding: '0.75rem 1.25rem', borderRadius: '12px', textAlign: 'center', minWidth: '150px' }}>
-              <span style={{ fontSize: '0.75rem', color: 'var(--status-pending-text)', display: 'block', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em' }}>Menunggu Persetujuan</span>
-              <span className="stat-card-number" style={{ fontSize: '1.45rem', fontWeight: 800, color: 'var(--status-pending-text)' }}>{totalMenunggu}</span>
+            <div className="stat-card-box" style={{ background: 'var(--card-bg)', border: '1px solid var(--card-border)', padding: '0.75rem 1.25rem', borderRadius: '8px', textAlign: 'center', minWidth: '150px' }}>
+              <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', display: 'block', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em' }}>Menunggu Persetujuan</span>
+              <span className="stat-card-number" style={{ fontSize: '1.45rem', fontWeight: 800, color: 'var(--primary-red)' }}>{totalMenunggu}</span>
             </div>
 
-            <div className="stat-card-box" style={{ background: 'var(--status-approved-bg)', border: '1px solid rgba(34, 197, 94, 0.45)', padding: '0.75rem 1.25rem', borderRadius: '12px', textAlign: 'center', minWidth: '140px' }}>
-              <span style={{ fontSize: '0.75rem', color: 'var(--status-approved-text)', display: 'block', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em' }}>Disetujui (Resmi)</span>
-              <span className="stat-card-number" style={{ fontSize: '1.45rem', fontWeight: 800, color: 'var(--status-approved-text)' }}>{totalDisetujui}</span>
+            <div className="stat-card-box" style={{ background: 'var(--card-bg)', border: '1px solid var(--card-border)', padding: '0.75rem 1.25rem', borderRadius: '8px', textAlign: 'center', minWidth: '140px' }}>
+              <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', display: 'block', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em' }}>Disetujui (Resmi)</span>
+              <span className="stat-card-number" style={{ fontSize: '1.45rem', fontWeight: 800, color: 'var(--primary-red)' }}>{totalDisetujui}</span>
             </div>
 
-            <div className="stat-card-box" style={{ background: 'var(--status-cancel-bg)', border: '1px solid rgba(239, 68, 68, 0.4)', padding: '0.75rem 1.25rem', borderRadius: '12px', textAlign: 'center', minWidth: '130px' }}>
-              <span style={{ fontSize: '0.75rem', color: 'var(--status-cancel-text)', display: 'block', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em' }}>Dibatalkan</span>
-              <span className="stat-card-number" style={{ fontSize: '1.45rem', fontWeight: 800, color: 'var(--status-cancel-text)' }}>{totalDibatalkan}</span>
+            <div className="stat-card-box" style={{ background: 'var(--card-bg)', border: '1px solid var(--card-border)', padding: '0.75rem 1.25rem', borderRadius: '8px', textAlign: 'center', minWidth: '130px' }}>
+              <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', display: 'block', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em' }}>Dibatalkan</span>
+              <span className="stat-card-number" style={{ fontSize: '1.45rem', fontWeight: 800, color: 'var(--primary-red)' }}>{totalDibatalkan}</span>
             </div>
           </div>
 
@@ -184,7 +184,7 @@ export default function PublicMonitoring({ letters, onEditRequest, onDeleteReque
                         </div>
                       </td>
                       <td>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', whiteSpace: 'nowrap', fontWeight: 600, color: '#0369a1' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', whiteSpace: 'nowrap', fontWeight: 600, color: 'var(--text-main)' }}>
                           {item.tanggal_ttd}
                         </div>
                       </td>
@@ -195,7 +195,7 @@ export default function PublicMonitoring({ letters, onEditRequest, onDeleteReque
                       </td>
                       <td>
                         {isApproved ? (
-                          <span style={{ fontFamily: 'monospace', fontWeight: 700, fontSize: '0.8125rem', color: 'var(--primary-red)', background: 'rgba(224, 0, 0, 0.08)', padding: '0.35rem 0.6rem', borderRadius: '8px', border: '1px solid rgba(224, 0, 0, 0.2)', display: 'inline-block' }}>
+                          <span style={{ fontFamily: 'Helvetica Neue, Arial, sans-serif', fontWeight: 700, fontSize: '0.8125rem', color: 'var(--primary-red)', background: 'var(--input-bg)', padding: '0.35rem 0.6rem', borderRadius: '8px', border: '1px solid var(--card-border)', display: 'inline-block' }}>
                             {item.nomor_surat}
                           </span>
                         ) : (
@@ -205,7 +205,7 @@ export default function PublicMonitoring({ letters, onEditRequest, onDeleteReque
                         )}
                       </td>
                       <td>
-                        <span style={{ fontFamily: 'monospace', fontSize: '0.75rem', fontWeight: 600, color: item.takah !== '-' ? 'var(--text-title)' : 'var(--text-muted)' }}>
+                        <span style={{ fontFamily: 'Helvetica Neue, Arial, sans-serif', fontSize: '0.75rem', fontWeight: 600, color: item.takah !== '-' ? 'var(--text-title)' : 'var(--text-muted)' }}>
                           {item.takah}
                         </span>
                       </td>

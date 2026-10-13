@@ -30,8 +30,8 @@ function OverviewDashboard({ onNavigate }) {
       {/* Main Unified Portal Container */}
       <div className="glass-card hero-container" style={{
         padding: '2.5rem 2rem',
-        borderRadius: '24px',
-        background: 'linear-gradient(135deg, rgba(224, 0, 0, 0.06) 0%, rgba(30, 41, 59, 0.03) 100%)',
+        borderRadius: '8px',
+        background: 'var(--card-bg)',
         border: '1px solid var(--card-border)',
         position: 'relative',
         overflow: 'hidden',
@@ -46,17 +46,17 @@ function OverviewDashboard({ onNavigate }) {
             alignItems: 'center',
             gap: '0.5rem',
             padding: '0.4rem 0.9rem',
-            borderRadius: '99px',
-            background: 'rgba(224, 0, 0, 0.12)',
+            borderRadius: '8px',
+            background: 'rgba(204, 0, 0, 0.06)',
             color: 'var(--primary-red)',
             fontSize: '0.8125rem',
-            fontWeight: 800,
+            fontWeight: 700,
             letterSpacing: '0.04em',
             marginBottom: '1rem'
           }}>
             <Sparkles size={16} /> SMART GS REGIONAL 3
           </div>
-          <h1 className="hero-title" style={{ fontSize: '2.35rem', fontWeight: 800, color: 'var(--text-title)', lineHeight: 1.25, letterSpacing: '-0.025em', marginBottom: '0.75rem' }}>
+          <h1 className="hero-title" style={{ fontSize: '2.35rem', fontWeight: 700, color: 'var(--text-title)', lineHeight: 1.25, letterSpacing: '-0.025em', marginBottom: '0.75rem' }}>
             Selamat Datang di SMART GS Telkom Regional 3
           </h1>
           <p style={{ fontSize: '0.875rem', fontWeight: 600, color: 'var(--primary-red)', marginBottom: '0.5rem', letterSpacing: '0.01em' }}>
@@ -84,10 +84,10 @@ function OverviewDashboard({ onNavigate }) {
                     <Building2 size={28} style={{ color: 'var(--primary-red)' }} />
                   </div>
                   <div>
-                    <h3 style={{ fontSize: '1.35rem', fontWeight: 800, color: 'var(--text-title)', letterSpacing: '-0.02em', margin: 0 }}>
+                    <h3 style={{ fontSize: '1.35rem', fontWeight: 700, color: 'var(--text-title)', letterSpacing: '-0.02em', margin: 0 }}>
                       TLT Space Hub
                     </h3>
-                    <span style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--primary-red)', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
+                    <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--primary-red)', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
                       General Support
                     </span>
                   </div>
@@ -114,7 +114,7 @@ function OverviewDashboard({ onNavigate }) {
             </div>
 
             {/* Solid Red CTA Button */}
-            <div className="portal-cta-btn" style={{ fontSize: '1rem', fontWeight: 800 }}>
+            <div className="portal-cta-btn" style={{ fontSize: '1rem', fontWeight: 700 }}>
               <span>Akses TLT Space Hub</span>
               <ArrowRight size={18} className="cta-arrow" />
             </div>
@@ -130,10 +130,10 @@ function OverviewDashboard({ onNavigate }) {
                     <FileSignature size={28} style={{ color: 'var(--primary-red)' }} />
                   </div>
                   <div>
-                    <h3 style={{ fontSize: '1.35rem', fontWeight: 800, color: 'var(--text-title)', letterSpacing: '-0.02em', margin: 0 }}>
+                    <h3 style={{ fontSize: '1.35rem', fontWeight: 700, color: 'var(--text-title)', letterSpacing: '-0.02em', margin: 0 }}>
                       Digiletter Regional 3
                     </h3>
-                    <span style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--primary-red)', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
+                    <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--primary-red)', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
                       Sekretariat Divisi
                     </span>
                   </div>
@@ -160,7 +160,7 @@ function OverviewDashboard({ onNavigate }) {
             </div>
 
             {/* Solid Red CTA Button */}
-            <div className="portal-cta-btn" style={{ fontSize: '1rem', fontWeight: 800 }}>
+            <div className="portal-cta-btn" style={{ fontSize: '1rem', fontWeight: 700 }}>
               <span>Akses Digiletter</span>
               <ArrowRight size={18} className="cta-arrow" />
             </div>
@@ -190,7 +190,7 @@ function MainApp() {
     return (
       <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--bg-main)' }}>
         <div style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
-          <img src="/telkom-icon.png" alt="Telkom" style={{ height: '48px', animation: 'pulse 1.5s infinite' }} />
+          <img src="/telkom-icon.png" alt="Telkom" style={{ height: '48px', animation: 'none' }} />
           <div style={{ color: 'var(--primary-red)', fontWeight: 700, fontSize: '1rem' }}>
             Memuat Autentikasi SMART GS Telkom...
           </div>
